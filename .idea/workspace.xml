@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ae4179f4-8f47-46b1-9394-b6d9a027a59b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/assets/js/customize-preview.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/assets/js/customize-preview.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/assets/js/typography-customize-preview.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/assets/js/typography-customize-preview.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/sass/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/sass/_layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/settings/woocommerce.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/settings/woocommerce.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/wc-logs/fatal-errors-2019-12-06-d48ef6c5b8109e58836b736a9a97c3e0.log" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/uploads/wc-logs/fatal-errors-2019-12-06-d48ef6c5b8109e58836b736a9a97c3e0.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +33,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sunio" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -59,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575602709798</updated>
-      <workItem from="1575602710967" duration="4404000" />
+      <workItem from="1575602710967" duration="7758000" />
     </task>
     <servers />
   </component>

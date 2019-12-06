@@ -1082,6 +1082,28 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 				'panel' 			=> $panel,
 			) );
 
+            /**
+             * Sidebar
+             */
+
+            $wp_customize->add_setting( 'sunio_sidebar_type', array(
+                'default'           	=> 'woo-sidebar',
+                'sanitize_callback' 	=> 'sunio_sanitize_select',
+            ) );
+
+            $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sunio_sidebar_type', array(
+                'label'	   				=> esc_html__( 'Sidebar Type', 'sunio' ),
+                'type' 					=> 'select',
+                'section'  				=> 'sunio_woocommerce_archives',
+                'settings' 				=> 'sunio_sidebar_type',
+                'priority' 				=> 10,
+                'choices' 				=> array(
+                    'woo-sidebar' 	=> esc_html__( 'Woo Sidebar', 'sunio' ),
+                    'default-sidebar' 	=> esc_html__( 'Default Sidebar', 'sunio' ),
+                ),
+                'active_callback' 		=> 'sunio_cac_has_woo_shop_rl_layout',
+            ) ) );
+
 			/**
 			 * Layout
 			 */
