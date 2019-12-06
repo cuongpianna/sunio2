@@ -1,0 +1,167 @@
+/**
+ * Social Icons Widget
+ */
+.sunio-social-icons {
+	display: inline-block;
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	&.rotate a:hover {
+		transform: rotate(360deg);
+	}
+
+	&.zoomout a:hover {
+		transform: scale(0.8);
+	}
+
+	&.float a:hover {
+		transform: translateY(-3px);
+	}
+
+	li {
+	    display: inline-block;
+		margin: 3px;
+		padding: 0;
+
+		a {
+		    display: block;
+		    padding: 0;
+		    text-align: center;
+		}
+	}
+
+	&.style-light li a,
+	&.style-dark li a,
+	&.style-colored li a {
+	    width: 55px;
+	    height: 55px;
+	    line-height: 55px;
+	    font-size: 16px;
+		border-radius: 2px;
+	}
+
+	&.style-light li {
+		a {
+		    color: $color-13;
+		    border: 1px solid $border-color;
+		}
+
+		&.sunio-twitter a:hover { color: #46d4fe !important; border-color: #46d4fe !important; }
+		&.sunio-facebook a:hover { color: #37589b !important; border-color: #37589b !important; }
+		&.sunio-google-plus a:hover { color: #de5a49 !important; border-color: #de5a49 !important; }
+		&.sunio-pinterest a:hover { color: #cb2027 !important; border-color: #cb2027 !important; }
+		&.sunio-dribbble a:hover { color: #ea4c89 !important; border-color: #ea4c89 !important; }
+		&.sunio-vk a:hover { color: #597BA5 !important; border-color: #597BA5 !important; }
+		&.sunio-instagram a:hover { color: #3F729B !important; border-color: #3F729B !important; }
+		&.sunio-linkedin a:hover { color: #3399CC !important; border-color: #3399CC !important; }
+		&.sunio-tumblr a:hover { color: #2C4762 !important; border-color: #2C4762 !important; }
+		&.sunio-github a:hover { color: #60b044 !important; border-color: #60b044 !important; }
+		&.sunio-flickr a:hover { color: #fa4086 !important;border-color: #fa4086 !important; }
+		&.sunio-skype a:hover { color: #00AFF0 !important; border-color: #00AFF0 !important; }
+		&.sunio-trello a:hover { color: #0079bf !important; border-color: #0079bf !important; }
+		&.sunio-foursquare a:hover { color: #2d5be3 !important; border-color: #2d5be3 !important; }
+		&.sunio-youtube a:hover { color: #C4302B !important; border-color: #C4302B !important; }
+		&.sunio-vimeo a:hover { color: #1ab7ea !important; border-color: #1ab7ea !important; }
+		&.sunio-vine a:hover { color: #00bf8f !important; border-color: #00bf8f !important; }
+		&.sunio-xing a:hover { color: #006464 !important; border-color: #006464 !important; }
+		&.sunio-yelp a:hover { color: #C41200 !important; border-color: #C41200 !important; }
+		&.sunio-tripadvisor a:hover { color: #589442 !important; border-color: #589442 !important; }
+		&.sunio-rss a:hover { color: #ff7900 !important; border-color: #ff7900 !important; }
+		&.sunio-email a:hover { color: #13aff0 !important; border-color: #13aff0 !important; }
+	}
+
+	&.style-dark li {
+		a {
+		    color: $color-2;
+		    border: 1px solid $color-2;
+		}
+
+		&.sunio-twitter a:hover { color: #46d4fe !important; border-color: #46d4fe !important; }
+		&.sunio-facebook a:hover { color: #37589b !important; border-color: #37589b !important; }
+		&.sunio-google-plus a:hover { color: #de5a49 !important; border-color: #de5a49 !important; }
+		&.sunio-pinterest a:hover { color: #cb2027 !important; border-color: #cb2027 !important; }
+		&.sunio-dribbble a:hover { color: #ea4c89 !important; border-color: #ea4c89 !important; }
+		&.sunio-vk a:hover { color: #597BA5 !important; border-color: #597BA5 !important; }
+		&.sunio-instagram a:hover { color: #3F729B !important; border-color: #3F729B !important; }
+		&.sunio-linkedin a:hover { color: #3399CC !important; border-color: #3399CC !important; }
+		&.sunio-tumblr a:hover { color: #2C4762 !important; border-color: #2C4762 !important; }
+		&.sunio-github a:hover { color: #60b044 !important; border-color: #60b044 !important; }
+		&.sunio-flickr a:hover { color: #fa4086 !important;border-color: #fa4086 !important; }
+		&.sunio-skype a:hover { color: #00AFF0 !important; border-color: #00AFF0 !important; }
+		&.sunio-trello a:hover { color: #0079bf !important; border-color: #0079bf !important; }
+		&.sunio-foursquare a:hover { color: #2d5be3 !important; border-color: #2d5be3 !important; }
+		&.sunio-youtube a:hover { color: #C4302B !important; border-color: #C4302B !important; }
+		&.sunio-vimeo a:hover { color: #1ab7ea !important; border-color: #1ab7ea !important; }
+		&.sunio-vine a:hover { color: #00bf8f !important; border-color: #00bf8f !important; }
+		&.sunio-xing a:hover { color: #006464 !important; border-color: #006464 !important; }
+		&.sunio-yelp a:hover { color: #C41200 !important; border-color: #C41200 !important; }
+		&.sunio-tripadvisor a:hover { color: #589442 !important; border-color: #589442 !important; }
+		&.sunio-rss a:hover { color: #ff7900 !important; border-color: #ff7900 !important; }
+		&.sunio-email a:hover { color: #13aff0 !important; border-color: #13aff0 !important; }
+	}
+
+	&.style-colored li {
+		a {
+		    color: $color-1;
+
+		    &:hover {
+		    	color: $color-1;
+		    }
+		}
+
+		&.sunio-twitter a { background-color: #46d4fe; }
+		&.sunio-twitter a:hover { background-color: #39b4d8; }
+		&.sunio-facebook a { background-color: #37589b; }
+		&.sunio-facebook a:hover{ background-color: #2d477c; }
+		&.sunio-google-plus a { background-color: #de5a49; }
+		&.sunio-google-plus a:hover { background-color: #bb4c3e; }
+		&.sunio-pinterest a { background-color: #cb2027; }
+		&.sunio-pinterest a:hover { background-color: #a91d23; }
+		&.sunio-dribbble a { background-color: #ea4c89; }
+		&.sunio-dribbble a:hover { background-color: #c64174; }
+		&.sunio-vk a { background-color: #597BA5; }
+		&.sunio-vk a:hover { background-color: #486384; }
+		&.sunio-instagram a { background-color: #3F729B; }
+		&.sunio-instagram a:hover { background-color: #315a7c; }
+		&.sunio-linkedin a { background-color: #3399CC; }
+		&.sunio-linkedin a:hover { background-color: #2678a1; }
+		&.sunio-tumblr a { background-color: #2C4762; }
+		&.sunio-tumblr a:hover { background-color: #1d3042; }
+		&.sunio-github a { background-color: #60b044; }
+		&.sunio-github a:hover { background-color: #4f9237; }
+		&.sunio-flickr a { background-color: #fa4086; }
+		&.sunio-flickr a:hover { background-color: #c63169; }
+		&.sunio-skype a { background-color: #00AFF0; }
+		&.sunio-skype a:hover { background-color: #0291c6; }
+		&.sunio-trello a { background-color: #0079bf; }
+		&.sunio-trello a:hover { background-color: #0079bf; }
+		&.sunio-foursquare a { background-color: #2d5be3; }
+		&.sunio-foursquare a:hover { background-color: #2d5be3; }
+		&.sunio-youtube a { background-color: #C4302B; }
+		&.sunio-youtube a:hover { background-color: #982420; }
+		&.sunio-vimeo a { background-color: #1ab7ea; }
+		&.sunio-vimeo a:hover { background-color: #1494bd; }
+		&.sunio-vine a { background-color: #00bf8f; }
+		&.sunio-vine a:hover { background-color: #01906c; }
+		&.sunio-xing a { background-color: #006464; }
+		&.sunio-xing a:hover { background-color: #014646; }
+		&.sunio-yelp a { background-color: #C41200; }
+		&.sunio-yelp a:hover { background-color: #940f01; }
+		&.sunio-tripadvisor a { background-color: #589442; }
+		&.sunio-tripadvisor a:hover { background-color: #426f32; }
+		&.sunio-rss a { background-color: #ff7900; }
+		&.sunio-rss a:hover { background-color: #d46603; }
+		&.sunio-email a { background-color: #13aff0; }
+		&.sunio-email a:hover { background-color: #0f8dc2; }
+	}
+
+	&.style-simple li {
+		margin: 0 6px;
+
+	    a {
+		    font-size: 16px;
+		}
+	}
+}
