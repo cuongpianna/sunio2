@@ -378,6 +378,9 @@ final class sunio_Theme_Class {
 		// Load font awesome style
 		wp_enqueue_style( 'font-awesome', $dir .'third/font-awesome.min.css', false, '4.7.0' );
 
+        // Load font awesome style
+        wp_enqueue_style( 'bootstrap', $dir .'third/bootstrap.min.css', false, '4.7.0' );
+
 		// Register simple line icons style
 		wp_enqueue_style( 'simple-line-icons', $dir .'third/simple-line-icons.min.css', false, '2.4.0' );
 

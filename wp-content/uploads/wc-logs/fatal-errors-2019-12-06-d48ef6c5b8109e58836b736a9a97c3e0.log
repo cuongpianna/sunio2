@@ -190,3 +190,17 @@ Stack trace:
 
 2019-12-06T04:16:46+00:00 CRITICAL syntax error, unexpected ':' in C:\xampp\htdocs\su\wp-content\themes\sunio\partials\page-header.php on line 45
 
+2019-12-06T07:04:12+00:00 CRITICAL Uncaught Error: Call to undefined function lambor_post_layout() in C:\xampp\htdocs\su\wp-content\themes\sunio\sidebar.php:10
+Stack trace:
+#0 C:\xampp\htdocs\su\wp-includes\template.php(722): require_once()
+#1 C:\xampp\htdocs\su\wp-includes\template.php(671): load_template('C:\\xampp\\htdocs...', true)
+#2 C:\xampp\htdocs\su\wp-includes\general-template.php(111): locate_template(Array, true)
+#3 C:\xampp\htdocs\su\wp-content\themes\sunio\inc\helpers.php(550): get_sidebar()
+#4 C:\xampp\htdocs\su\wp-includes\class-wp-hook.php(288): sunio_display_sidebar('')
+#5 C:\xampp\htdocs\su\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#6 C:\xampp\htdocs\su\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\su\wp-content\themes\sunio\index.php(111): do_action('sunio_after_pri...')
+#8 C:\xampp\htdocs\su\wp-includes\template-loader.php(98): include('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\su\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\su\index in C:\xampp\htdocs\su\wp-content\themes\sunio\sidebar.php on line 10
+
