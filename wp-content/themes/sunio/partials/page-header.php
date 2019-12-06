@@ -42,32 +42,34 @@ $heading = apply_filters( 'sunio_page_header_heading', $heading ); ?>
 
 <?php do_action( 'sunio_before_page_header' ); ?>
 
+<?php if(!is_shop() && !is_tax()): ?>
 <header class="<?php echo esc_attr( $classes ); ?>">
 
-	<?php do_action( 'sunio_before_page_header_inner' ); ?>
+    <?php do_action( 'sunio_before_page_header_inner' ); ?>
 
-	<div class="container clr page-header-inner">
+    <div class="container clr page-header-inner">
 
-		<?php
-		// Return if page header is disabled
-		if ( sunio_has_page_header_heading() ) { ?>
+        <?php
+        // Return if page header is disabled
+        if ( sunio_has_page_header_heading() ) { ?>
 
-			<<?php echo esc_attr( $heading ); ?> class="page-header-title clr"<?php sunio_schema_markup( 'headline' ); ?>><?php echo wp_kses_post( sunio_title() ); ?></<?php echo esc_attr( $heading ); ?>>
+        <<?php echo esc_attr( $heading ); ?> class="page-header-title clr"<?php sunio_schema_markup( 'headline' ); ?>><?php echo wp_kses_post( sunio_title() ); ?></<?php echo esc_attr( $heading ); ?>>
 
-			<?php get_template_part( 'partials/page-header-subheading' ); ?>
+<?php get_template_part( 'partials/page-header-subheading' ); ?>
 
-		<?php } ?>
+<?php } ?>
 
-		<?php if ( function_exists( 'sunio_breadcrumb_trail' ) ) {
-			sunio_breadcrumb_trail();
-		} ?>
+    <?php if ( function_exists( 'sunio_breadcrumb_trail' ) ) {
+        sunio_breadcrumb_trail();
+    } ?>
 
-	</div><!-- .page-header-inner -->
+    </div><!-- .page-header-inner -->
 
-	<?php sunio_page_header_overlay(); ?>
+    <?php sunio_page_header_overlay(); ?>
 
-	<?php do_action( 'sunio_after_page_header_inner' ); ?>
+    <?php do_action( 'sunio_after_page_header_inner' ); ?>
 
 </header><!-- .page-header -->
 
 <?php do_action( 'sunio_after_page_header' ); ?>
+<?php endif; ?>
