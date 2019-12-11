@@ -21,7 +21,14 @@ $get_content = sunio_topbar_template_content();
 
 // Get topbar content
 $content = get_theme_mod( 'sunio_top_bar_content' );
+$hotline_heading = get_theme_mod('sunio_hotline_heading');
+$hotline_value = get_theme_mod('sunio_hotline_value');
+
+$hotline_heading2 = get_theme_mod('sunio_hotline_heading2');
+$hotline_value2 = get_theme_mod('sunio_hotline_value2');
+
 $content = sunio_tm_translation( 'sunio_top_bar_content', $content );
+var_dump(get_theme_mod( 'sunio_hotline_heading' ));
 
 // Display topbar content
 if ( ! empty( $template )
@@ -80,7 +87,16 @@ if ( ! empty( $template )
 
                     <?php
                     // Display top bar content
-                    echo do_shortcode( $content ); ?>
+//                    echo do_shortcode( $content );
+//                    echo $hotline_heading;
+                    ?>
+
+                    <span class="topbar-hotline-heading"><?php echo do_shortcode($hotline_heading); ?></span>
+                    <span class="topbar-hotline-value"><?php echo do_shortcode($hotline_value); ?></span>
+
+                    <?php if($hotline_heading2 != ''): ?>
+                        abcs
+                    <?php endif; ?>
 
                 </span>
 

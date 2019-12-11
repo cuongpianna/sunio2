@@ -345,6 +345,64 @@ if ( ! class_exists( 'sunio_Top_Bar_Customizer' ) ) :
 				'active_callback' 		=> 'sunio_cac_has_topbar',
 			) ) );
 
+            $wp_customize->add_setting( 'sunio_hotline_heading', array(
+                'transport'           	=> 'postMessage',
+                'default'           	=> esc_html__( 'HOTLINE:', 'sunio' ),
+                'sanitize_callback' 	=> 'wp_kses_post',
+            ) );
+
+            $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sunio_hotline_heading', array(
+                'label'	   				=> esc_html__( 'Hotline', 'sunio' ),
+                'type' 					=> 'text',
+                'section'  				=> 'sunio_topbar_content',
+                'settings' 				=> 'sunio_hotline_heading',
+                'priority' 				=> 10,
+                'active_callback' 		=> 'sunio_cac_has_topbar',
+            ) ) );
+
+            $wp_customize->add_setting( 'sunio_hotline_value', array(
+                'transport'           	=> 'postMessage',
+                'default'           	=> esc_html__( '1900 63 69 14', 'sunio' ),
+                'sanitize_callback' 	=> 'wp_kses_post',
+            ) );
+
+            $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sunio_hotline_value', array(
+                'type' 					=> 'text',
+                'section'  				=> 'sunio_topbar_content',
+                'settings' 				=> 'sunio_hotline_value',
+                'priority' 				=> 10,
+                'active_callback' 		=> 'sunio_cac_has_topbar',
+            ) ) );
+
+            // Hotline2
+
+            $wp_customize->add_setting( 'sunio_hotline_heading2', array(
+                'transport'           	=> 'postMessage',
+                'sanitize_callback' 	=> 'wp_kses_post',
+            ) );
+
+            $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sunio_hotline_heading2', array(
+                'label'	   				=> esc_html__( 'CONTACT', 'sunio' ),
+                'type' 					=> 'text',
+                'section'  				=> 'sunio_topbar_content',
+                'settings' 				=> 'sunio_hotline_heading2',
+                'priority' 				=> 10,
+                'active_callback' 		=> 'sunio_cac_has_topbar',
+            ) ) );
+
+            $wp_customize->add_setting( 'sunio_hotline_value2', array(
+                'transport'           	=> 'postMessage',
+                'sanitize_callback' 	=> 'wp_kses_post',
+            ) );
+
+            $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sunio_hotline_value2', array(
+                'type' 					=> 'text',
+                'section'  				=> 'sunio_topbar_content',
+                'settings' 				=> 'sunio_hotline_value2',
+                'priority' 				=> 10,
+                'active_callback' 		=> 'sunio_cac_has_topbar',
+            ) ) );
+
 			/**
 			 * Section
 			 */
