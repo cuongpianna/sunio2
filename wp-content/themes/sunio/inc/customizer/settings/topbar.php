@@ -308,42 +308,42 @@ if ( ! class_exists( 'sunio_Top_Bar_Customizer' ) ) :
 				'panel' 			=> $panel,
 			) );
 
-			/**
-			 * Top Bar Template
-			 */
-			$wp_customize->add_setting( 'sunio_top_bar_template', array(
-				'default'           	=> '0',
-				'sanitize_callback' 	=> 'sunio_sanitize_select',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sunio_top_bar_template', array(
-				'label'	   				=> esc_html__( 'Select Template', 'sunio' ),
-				'description'	   		=> esc_html__( 'Choose a template created in Theme Panel > My Library to replace the content.', 'sunio' ),
-				'type' 					=> 'select',
-				'section'  				=> 'sunio_topbar_content',
-				'settings' 				=> 'sunio_top_bar_template',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'sunio_cac_has_topbar',
-				'choices' 				=> sunio_customizer_helpers( 'library' ),
-			) ) );
+//			/**
+//			 * Top Bar Template
+//			 */
+//			$wp_customize->add_setting( 'sunio_top_bar_template', array(
+//				'default'           	=> '0',
+//				'sanitize_callback' 	=> 'sunio_sanitize_select',
+//			) );
+//
+//			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sunio_top_bar_template', array(
+//				'label'	   				=> esc_html__( 'Select Template', 'sunio' ),
+//				'description'	   		=> esc_html__( 'Choose a template created in Theme Panel > My Library to replace the content.', 'sunio' ),
+//				'type' 					=> 'select',
+//				'section'  				=> 'sunio_topbar_content',
+//				'settings' 				=> 'sunio_top_bar_template',
+//				'priority' 				=> 10,
+//				'active_callback' 		=> 'sunio_cac_has_topbar',
+//				'choices' 				=> sunio_customizer_helpers( 'library' ),
+//			) ) );
 
 			/**
 			 * Top Bar Content
 			 */
-			$wp_customize->add_setting( 'sunio_top_bar_content', array(
-				'transport'           	=> 'postMessage',
-				'default'           	=> esc_html__( 'Place your content here', 'sunio' ),
-				'sanitize_callback' 	=> 'wp_kses_post',
-			) );
-
-			$wp_customize->add_control( new sunio_Customizer_Textarea_Control( $wp_customize, 'sunio_top_bar_content', array(
-				'label'	   				=> esc_html__( 'Content', 'sunio' ),
-				'description'	   		=> sprintf( esc_html__( 'Shortcodes allowed, %1$ssee the list%2$s.', 'sunio' ), '<a href="http://docs.sunio.org/category/369-shortcodes" target="_blank">', '</a>' ),
-				'section'  				=> 'sunio_topbar_content',
-				'settings' 				=> 'sunio_top_bar_content',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'sunio_cac_has_topbar',
-			) ) );
+//			$wp_customize->add_setting( 'sunio_top_bar_content', array(
+//				'transport'           	=> 'postMessage',
+//				'default'           	=> esc_html__( 'Place your content here', 'sunio' ),
+//				'sanitize_callback' 	=> 'wp_kses_post',
+//			) );
+//
+//			$wp_customize->add_control( new sunio_Customizer_Textarea_Control( $wp_customize, 'sunio_top_bar_content', array(
+//				'label'	   				=> esc_html__( 'Content', 'sunio' ),
+//				'description'	   		=> sprintf( esc_html__( 'Shortcodes allowed, %1$ssee the list%2$s.', 'sunio' ), '<a href="http://docs.sunio.org/category/369-shortcodes" target="_blank">', '</a>' ),
+//				'section'  				=> 'sunio_topbar_content',
+//				'settings' 				=> 'sunio_top_bar_content',
+//				'priority' 				=> 10,
+//				'active_callback' 		=> 'sunio_cac_has_topbar',
+//			) ) );
 
             $wp_customize->add_setting( 'sunio_hotline_heading', array(
                 'transport'           	=> 'postMessage',
@@ -352,12 +352,12 @@ if ( ! class_exists( 'sunio_Top_Bar_Customizer' ) ) :
             ) );
 
             $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sunio_hotline_heading', array(
-                'label'	   				=> esc_html__( 'Hotline', 'sunio' ),
                 'type' 					=> 'text',
                 'section'  				=> 'sunio_topbar_content',
                 'settings' 				=> 'sunio_hotline_heading',
                 'priority' 				=> 10,
                 'active_callback' 		=> 'sunio_cac_has_topbar',
+                'default'               => 'HOTLINE:'
             ) ) );
 
             $wp_customize->add_setting( 'sunio_hotline_value', array(
@@ -372,6 +372,7 @@ if ( ! class_exists( 'sunio_Top_Bar_Customizer' ) ) :
                 'settings' 				=> 'sunio_hotline_value',
                 'priority' 				=> 10,
                 'active_callback' 		=> 'sunio_cac_has_topbar',
+                'default'               => '1900 63 69 14'
             ) ) );
 
             // Hotline2
@@ -379,6 +380,7 @@ if ( ! class_exists( 'sunio_Top_Bar_Customizer' ) ) :
             $wp_customize->add_setting( 'sunio_hotline_heading2', array(
                 'transport'           	=> 'postMessage',
                 'sanitize_callback' 	=> 'wp_kses_post',
+                'default'               => esc_html('SALES', 'sunio')
             ) );
 
             $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sunio_hotline_heading2', array(
@@ -388,11 +390,13 @@ if ( ! class_exists( 'sunio_Top_Bar_Customizer' ) ) :
                 'settings' 				=> 'sunio_hotline_heading2',
                 'priority' 				=> 10,
                 'active_callback' 		=> 'sunio_cac_has_topbar',
+                'default'               => 'SALES:'
             ) ) );
 
             $wp_customize->add_setting( 'sunio_hotline_value2', array(
                 'transport'           	=> 'postMessage',
                 'sanitize_callback' 	=> 'wp_kses_post',
+                'default'               => esc_html('08 96 355 777', 'sunio')
             ) );
 
             $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sunio_hotline_value2', array(
@@ -401,6 +405,7 @@ if ( ! class_exists( 'sunio_Top_Bar_Customizer' ) ) :
                 'settings' 				=> 'sunio_hotline_value2',
                 'priority' 				=> 10,
                 'active_callback' 		=> 'sunio_cac_has_topbar',
+                'default'               => '08 96 355 777'
             ) ) );
 
 			/**

@@ -19,7 +19,7 @@ if ( true != get_theme_mod( 'sunio_top_bar_full_width', false ) )  {
 }
 
 // If no content
-if ( ! get_theme_mod( 'sunio_top_bar_content' ) )  {
+if ( get_theme_mod( 'sunio_hotline_heading', 'HOTLINE:') == '' )  {
 	$classes[] = 'has-no-content';
 }
 
