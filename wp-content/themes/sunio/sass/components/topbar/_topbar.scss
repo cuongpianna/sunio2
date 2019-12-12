@@ -7,7 +7,7 @@
 }
 
 #top-bar {
-	padding: 8px 0;
+	padding-top: 2px;
 }
 
 #top-bar-inner {
@@ -25,6 +25,36 @@
 .top-bar-centered {
 	float: none;
 	text-align: center;
+}
+
+#top-bar-content{
+	.topbar-content{
+		position: relative;
+		padding: 4px 10px;
+		background: #c0c0c0;
+		display: inline-block;
+
+		.topbar-hotline-heading{
+			text-transform: uppercase;
+			color: #ffffff;
+			font-size: 15px;
+			font-weight: 600;
+		}
+
+		&:after{
+			padding-left: 4px;
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 17px 0 17px 15px;
+			border-color: transparent transparent transparent #bfbfbd;
+			position: absolute;
+			right: -19px;
+			top: 0;
+		}
+	}
 }
 
 /*------------------------------------*
