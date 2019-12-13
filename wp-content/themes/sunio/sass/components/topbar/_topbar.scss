@@ -7,6 +7,8 @@
 }
 
 #top-bar {
+	padding-left: 0;
+	padding-right: 0;
 	padding-top: 2px;
 }
 
@@ -37,6 +39,11 @@
 		.topbar-hotline-heading{
 			text-transform: uppercase;
 			color: #ffffff;
+			font-size: 15px;
+			font-weight: 600;
+		}
+
+		.topbar-hotline-value{
 			font-size: 15px;
 			font-weight: 600;
 		}
@@ -74,5 +81,5 @@
 		float: none;
 		text-align: center;
 	}
-	
+
 }

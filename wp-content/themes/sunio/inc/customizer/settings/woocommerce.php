@@ -580,6 +580,22 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 				'active_callback' 		=> 'sunio_cac_hasnt_woo_bag_style',
 			) ) );
 
+            /**
+             *  Cart Logo
+             */
+
+            $wp_customize->add_setting( 'sunio_cart_logo', array(
+                'default'           	=> '',
+                'sanitize_callback' 	=> 'sunio_sanitize_image',
+            ) );
+
+            $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sunio_cart_logo', array(
+                'label'	   				=> esc_html__( 'Cart Logo', 'sunio' ),
+                'section'  				=> 'sunio_woocommerce_menu_cart',
+                'settings' 				=> 'sunio_cart_logo',
+                'priority' 				=> 10,
+            ) ) );
+
 			/**
 			 * Center Vertically
 			 */

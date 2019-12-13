@@ -1095,3 +1095,71 @@ final class sunio_Theme_Class {
 
 }
 new sunio_Theme_Class;
+
+
+function display_search_form() {
+    $search_form = '<form method="get" id="search-form-alt" action="'. esc_url(home_url('/')) .'">
+		            <input type="text" name="s" id="s" placeholder="Nội dung tìm kiếm">
+		            <button>
+		                <i class="fas fa-search"></i>
+                    </button>
+	                </form>';
+    return $search_form;
+}
+add_shortcode('display_search_form', 'display_search_form');
+
+
+add_shortcode('sunio_mini_cart', 'sunio_mini_cart');
+function sunio_mini_cart($atts, $content = null) {
+
+    $atts = extract( shortcode_atts(
+        array(
+            'style' => 'style1',
+            'class'  => '',
+        ), $atts) );
+    ob_start();
+    $icon = get_theme_mod( 'lambor_woo_menu_icon', 'icon-handbag' );
+    $logo = get_theme_mod('sunio_cart_logo');
+    ?>
+    <?php if(class_exists('Woocommerce')){ ?>
+
+        <?php if( $style == 'style1' ){ ?>
+            <div class="cart-wrap  style1">
+                <div class="cart-total">
+                    <div class="cart-total-left">
+                        <div class="cart-title">Cart</div>
+                        <?php if(WC()->cart->get_cart_contents_count( ) == 0):  ?>
+                            <h6 class="cart-msg">Your cart is empty</h6>
+                        <?php else: ?>
+                            <h6 class="cart-msg">
+                                <a href="<?php echo wc_get_cart_url(); ?>">View cart</a>
+                            </h6>
+                        <?php endif; ?>
+                    </div>
+                    <div class="cart-total-right">
+                        <?php if(!$logo): ?>
+                            <i class="<?php echo $icon; ?>"></i>
+                        <?php else: ?>
+                            <img src="<?php echo $logo; ?>" alt="">
+                        <?php endif; ?>
+                        <span class="items">
+                        <?php echo (WC()->cart->get_cart_contents_count( ) > 1) ? WC()->cart->get_cart_contents_count( ) : WC()->cart->get_cart_contents_count( ); ?>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        <?php }else if( $style == 'style2' ){ ?>
+
+            <div class="cart-wrap style2">
+
+            </div>
+
+        <?php }else{ ?>
+            <div class="lambor-cart-wrapper style2 style3">
+            </div>
+        <?php } ?>
+
+    <?php } ?>
+    <?php return ob_get_clean();
+
+}
