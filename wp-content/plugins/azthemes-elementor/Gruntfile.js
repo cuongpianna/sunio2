@@ -24,7 +24,7 @@ module.exports = function ( grunt ) {
                     sourceMap: true,
                 },
                 files: {
-					'assets/css/heading/style.css': 'assets/css/heading/style.scss',
+					'assets/css/style.css': 'assets/css/style.scss',
                 }
             },
             prod: { // This outputs the compressed css file
@@ -34,7 +34,7 @@ module.exports = function ( grunt ) {
                     sourceMap: false,
                 },
                 files: {
-					'assets/css/heading/style.min.css': 'assets/css/heading/style.scss',
+					'assets/css/style.min.css': 'assets/css/style.scss',
                 }
             }
 		},

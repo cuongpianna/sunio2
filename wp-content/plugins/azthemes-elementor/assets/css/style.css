@@ -1,0 +1,120 @@
+/*------------------------------------*
+  $Nav
+*------------------------------------*/
+/*------------------------------------*
+  Navigation
+*------------------------------------*/
+.custom-header-nav {
+  padding-top: 39px;
+}
+
+.custom-header-nav .custom_header-top {
+  display: flex;
+  padding-bottom: 24px;
+}
+
+.custom-header-nav .custom_header-top #site-logo {
+  flex-basis: 30%;
+}
+
+.custom-header-nav .custom_header-top .custom_header-search {
+  flex-basis: 40%;
+  position: relative;
+}
+
+.custom-header-nav .custom_header-top .custom_header-search button {
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.custom-header-nav .custom_header-top .custom_header_cart {
+  flex-basis: 30%;
+}
+
+.custom-header-nav .custom_header-top .custom_header_cart .cart-total {
+  float: right;
+  display: flex;
+}
+
+.custom-header-nav .custom_header-top .custom_header_cart .cart-total:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+.custom-header-nav .custom_header-top .custom_header_cart .cart-total .cart-total-left {
+  margin-right: 15px;
+}
+
+.custom-header-nav .custom_header-top .custom_header_cart .cart-total .cart-total-left .cart-title {
+  margin: 7px 0 2px;
+  color: #de4a4a;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.custom-header-nav .custom_header-top .custom_header_cart .cart-total .cart-total-left h6.cart-msg {
+  color: #929292;
+  font-weight: 500;
+  text-align: right;
+  font-size: 12px;
+}
+
+.custom-header-nav .custom_header-top .custom_header_cart .cart-total .cart-total-right {
+  position: relative;
+}
+
+.custom-header-nav .custom_header-top .custom_header_cart .cart-total .cart-total-right span.items {
+  position: absolute;
+  text-align: center;
+  width: 26px;
+  height: 26px;
+  background: #de4a4a;
+  border-radius: 50%;
+  display: block;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  right: -13px;
+  bottom: 12px;
+  font-weight: 600;
+}
+
+.custom-header-nav .custom_header-bottom {
+  line-height: 1;
+  padding: 0;
+}
+
+.custom-header-nav .custom_header-bottom ul#menu-main-menu {
+  margin: 0;
+  list-style-type: none;
+}
+
+.custom-header-nav .custom_header-bottom ul#menu-main-menu > li {
+  display: inline-block;
+  padding-right: 75px;
+}
+
+.custom-header-nav .custom_header-bottom ul#menu-main-menu > li a {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.custom-header-nav .custom_header_fluid {
+  background: #464644;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.sunio-fluid {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */

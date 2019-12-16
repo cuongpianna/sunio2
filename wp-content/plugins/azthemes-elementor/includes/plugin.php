@@ -52,7 +52,8 @@ class AztElementorPlugin {
 			'principle',
 			'woo_products_tabs',
 			'woo_categories',
-			'newsletter'
+			'newsletter',
+            'navigation'
 		];
 	}
 
@@ -186,9 +187,11 @@ class AztElementorPlugin {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		foreach ( $this->modules as $module_name ) {
-			wp_register_style( 'azt-'. $module_name .'', plugins_url( '/assets/css/'. $module_name .'/style' . $suffix . '.css', sunio_Elementor_Extra__FILE__ ) );
-		}
+//		foreach ( $this->modules as $module_name ) {
+//			wp_register_style( 'azt-'. $module_name .'', plugins_url( '/assets/css/'. $module_name .'/style' . $suffix . '.css', sunio_Elementor_Extra__FILE__ ) );
+//		}
+
+        wp_register_style( 'azt-sunio', plugins_url( '/assets/css/style' . $suffix . '.css', sunio_Elementor_Extra__FILE__ ) );
 	}
 
 	/**
@@ -205,6 +208,7 @@ class AztElementorPlugin {
 		foreach ( $this->modules as $module_name ) {
 			wp_enqueue_style( 'azt-'. $module_name .'' );
 		}
+
 		// Fix the Woo Slider issue in the preview
 		// $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		// wp_enqueue_style( 'azt-elementor-preview', plugins_url( '/assets/css/elementor/preview' . $suffix . '.css', sunio_Elementor_Extra__FILE__ ) );
