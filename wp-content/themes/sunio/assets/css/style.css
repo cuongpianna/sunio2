@@ -2211,9 +2211,6 @@ a.pure-button-selected {
 	Phone Portrait and Landscape
 *------------------------------------*/
 @media only screen and (max-width: 767px) {
-  #top-bar {
-    padding: 20px 0;
-  }
   #top-bar > div:nth-child(2) {
     padding-top: 20px;
   }
@@ -4572,6 +4569,34 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 
 .sunio-mobile-menu-icon a.mobile-menu.opened .sunio-close-text {
   display: inline-block;
+}
+
+.sunio-mobile-menu-icon .sunio-mobile-cart {
+  position: relative;
+}
+
+.sunio-mobile-menu-icon .sunio-mobile-cart .sunio-mobile-cart-quantity {
+  position: absolute;
+  text-align: center;
+  width: 26px;
+  height: 26px;
+  background: #de4a4a;
+  border-radius: 50%;
+  display: block;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  right: -13px;
+  bottom: 17px;
+  font-weight: 600;
+  margin-right: 12px;
+}
+
+.sunio-mobile-menu-icon .mobile-menu a.mobile-menu:hover {
+  color: #de4a4a;
+}
+
+.sunio-mobile-menu-icon .mobile-menu i {
+  font-size: 20px;
 }
 
 .sunio-social-menu {

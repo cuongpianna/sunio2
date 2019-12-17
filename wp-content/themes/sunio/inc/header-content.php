@@ -186,7 +186,20 @@ if ( ! function_exists( 'sunio_mobile_cart_icon_not_medium_header' ) ) {
 			return;
 		}
 
-		echo sunio_wcmenucart_menu_item();
+        $logo = get_theme_mod('sunio_cart_logo');
+		$quantity = WC()->cart->get_cart_contents_count( );
+
+        if($logo){
+            $html = '<div class="sunio-mobile-cart">';
+                $html .= '<img src="' . $logo . '" alt="Cart">';
+
+                $html .= '<span class="sunio-mobile-cart-quantity" >' . $quantity . '</span>';
+
+            $html .= '</div>';
+            echo $html;
+        }else{
+            echo sunio_wcmenucart_menu_item();
+        }
 
 	}
 

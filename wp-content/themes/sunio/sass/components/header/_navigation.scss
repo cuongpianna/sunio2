@@ -393,3 +393,37 @@
 		}
 	}
 }
+
+.sunio-mobile-menu-icon{
+	.sunio-mobile-cart{
+		position: relative;
+
+		.sunio-mobile-cart-quantity{
+			position: absolute;
+			text-align: center;
+			width: 26px;
+			height: 26px;
+			background: #de4a4a;
+			border-radius: 50%;
+			display: block;
+			color: #ffffff;
+			border: 2px solid #ffffff;
+			right: -13px;
+			bottom: 17px;
+			font-weight: 600;
+			margin-right: 12px;
+		}
+	}
+	.mobile-menu{
+
+		a.mobile-menu{
+			&:hover{
+				color: #de4a4a;
+			}
+		}
+
+		i{
+			font-size: 20px;
+		}
+	}
+}

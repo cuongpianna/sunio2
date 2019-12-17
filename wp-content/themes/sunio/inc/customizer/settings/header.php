@@ -3468,7 +3468,7 @@ if ( ! class_exists( 'sunio_Header_Customizer' ) ) :
 			 * Display Menu Text
 			 */
 			$wp_customize->add_setting( 'sunio_mobile_menu_display_opening_text', array(
-				'default'           	=> true,
+				'default'           	=> false,
 				'sanitize_callback' 	=> 'sunio_sanitize_checkbox',
 			) );
 

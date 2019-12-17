@@ -19,7 +19,7 @@ if ( ! sunio_display_navigation() ) {
 $menu_location = apply_filters( 'sunio_main_menu_location', 'main_menu' );
 
 // Multisite global menu
-$ms_global_menu = apply_filters( 'sunio_ms_global_menu', false );
+$ms_global_menu = apply_filters( 'sunio_ms_global_menu', true );
 
 // Display if menu is defined
 if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
