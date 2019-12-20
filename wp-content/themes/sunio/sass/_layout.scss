@@ -6,9 +6,12 @@
 	position: relative;
 
     #content-wrap {
-		padding-top: 50px;
-		padding-bottom: 50px;
+		padding: 50px 0;
 	}
+}
+
+.site-main.tax-page{
+	background: #f5f5f5;
 }
 
 .no-margins #main #content-wrap,
@@ -22,7 +25,7 @@
 	float: left;
 	position: relative;
 	width: 72%;
-	padding-right: 30px;
+	padding-right: 20px;
 	border-right-width: 1px;
 	border-style: solid;
 	border-color: $color-9;

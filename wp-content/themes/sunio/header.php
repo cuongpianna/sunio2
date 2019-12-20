@@ -3,7 +3,12 @@
  * The Header for our theme.
  *
  * @package sunio WordPress theme
- */ ?>
+ */
+    if(is_tax()){
+        $bg_class = 'tax-page';
+    }
+
+?>
 
 <!DOCTYPE html>
 <html class="<?php echo esc_attr( sunio_html_classes() ); ?>" <?php language_attributes(); ?><?php sunio_schema_markup( 'html' ); ?>>
@@ -30,6 +35,6 @@
 
 			<?php do_action( 'sunio_before_main' ); ?>
 			
-			<main id="main" class="site-main clr"<?php sunio_schema_markup( 'main' ); ?>>
+			<main id="main" class="site-main clr <?php echo $bg_class; ?>"<?php sunio_schema_markup( 'main' ); ?>>
 
 				<?php do_action( 'sunio_page_header' ); ?>

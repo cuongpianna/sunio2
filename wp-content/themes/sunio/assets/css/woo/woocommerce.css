@@ -5091,3 +5091,50 @@ Woo Responsive
     margin: 0 0 10px !important;
   }
 }
+
+.woo-sidebar-wrap .woo-sidebar-title {
+  background: #5e5653;
+  height: 40px;
+  border-radius: 7px 7px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.woo-sidebar-wrap .woo-sidebar-title h3 {
+  padding-left: 10px;
+  margin-bottom: 0;
+  line-height: 1;
+  text-transform: capitalize;
+}
+
+.woo-sidebar-wrap .woo-sidebar-title span {
+  width: 40px;
+  text-align: center;
+  border-right: 2px solid #ffffff;
+}
+
+.woo-sidebar-wrap .woo-sidebar-title h3, .woo-sidebar-wrap .woo-sidebar-title span {
+  color: #fdeb33;
+  font-size: 17px;
+  text-transform: uppercase;
+  height: 40px;
+  line-height: 40px;
+}
+
+.woo-sidebar-wrap p.woo-sidebar-current-title {
+  font-size: 18px;
+  color: black;
+  padding: 5px 0 5px 12px;
+  margin-bottom: 0;
+  background: #99b3d4;
+  margin-top: 12px;
+}
+
+.woo-sidebar-wrap .current-cat li {
+  padding: 10px 12px;
+}
+
+.woo-sidebar-wrap .current-cat li a {
+  font-size: 14px;
+  color: #293571;
+}

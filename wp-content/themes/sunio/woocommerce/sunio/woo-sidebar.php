@@ -1,60 +1,94 @@
 <?php
 
-$taxonomy = 'product_cat';
-$orderby = 'name';
-$show_count = 0;
-$pad_counts = 0;
-$hierarchical = 1;
-$title = '';
-$empty = 0;
+$current_cate = get_queried_object();
+$current_cate_id = $current_cate->term_id;
+
+$arg = array('hierarchical' => 1,
+    'show_option_none' => '',
+    'hide_empty' => 0,
+    'parent' => $current_cate_id,
+    'taxonomy' => 'product_cat');
+$sub_current_cates = get_categories($arg);
+
+$other_cate_args = array(
+    'hierarchical' => 1,
+    'show_option_none' => '',
+    'hide_empty' => 0,
+    'taxonomy' => 'product_cat',
+    'exclude' => $current_cate_id
+);
+
+$other_cates = get_categories($other_cate_args);
 
 $args = array(
-    'taxonomy' => $taxonomy,
-    'orderby' => $orderby,
-    'show_count' => $show_count,
-    'pad_counts' => $pad_counts,
-    'hierarchical' => $hierarchical,
-    'title_li' => $title,
-    'hide_empty' => $empty
+    'taxonomy' => 'product_cat',
+//    'orderby'      => $orderby,
+//    'show_count'   => $show_count,
+//    'pad_counts'   => $pad_counts,
+    'hierarchical' => 1,
+    'title_li' => '',
+    'hide_empty' => 0,
+    'exclude' => $current_cate_id
 );
-$all_categories = get_categories($args);
+$other_cates = get_categories($args);
+
 ?>
 
 
 <div class="woo-sidebar-wrap">
-    <div class="sidebar-title"><span class="icon fa fa-bars"></span>
-        <h3>Danh mục sản phẩm</h3></div>
+    <div class="woo-sidebar-title">
+        <span class="icon fa fa-bars"></span>
+        <h3>Danh mục sản phẩm</h3>
+    </div>
 
-    <p class="sidebar-subtitle"><?php echo single_cat_title(); ?></p>
+    <p class="woo-sidebar-current-title">
+        <?php echo single_cat_title(); ?>
+    </p>
 
-    <ul class="woo-sidebar">
-        <?php foreach ($all_categories as $cat): ?>
+    <?php if ($sub_current_cates): ?>
+        <ul class="current-cat">
+            <?php foreach ($sub_current_cates as $value): ?>
+                <li>
+                    <i class="fas fa-angle-right"></i>
+                    <a href="<?php esc_url(get_term_link($value->slug, 'product_cat')); ?>">
+                        <?php esc_html_e($value->name, 'sunio'); ?>
+                    </a>
+                </li>
+            <?php endforeach;
+            wp_reset_postdata(); ?>
+        </ul>
+    <?php endif; ?>
+
+    <ul class="other-cat">
+        <?php foreach ($other_cates as $cat): ?>
             <?php if ($cat->category_parent == 0): $category_id = $cat->term_id; ?>
-                <li><a href="<?php get_term_link($cat->slug, 'product_cat') ?>"> <?php echo $cat->name; ?> </a>
+                <li>
+                    <a href="<?php get_term_link($cat->slug, 'product_cat'); ?>">
+                        <?php esc_html_e($cat->name, 'sunio'); ?>
+                    </a>
+
                     <?php
                     $args2 = array(
                         'taxonomy' => $taxonomy,
                         'child_of' => 0,
                         'parent' => $category_id,
-                        'orderby' => $orderby,
-                        'show_count' => $show_count,
-                        'pad_counts' => $pad_counts,
-                        'hierarchical' => $hierarchical,
+                        'hierarchical' => 1,
                         'title_li' => $title,
-                        'hide_empty' => $empty
+                        'hide_empty' => 0
                     );
                     $sub_cats = get_categories($args2);
-                    if ($sub_cats): ?>
-                        <ul class="sub_category">
-                            <?php
-                            foreach ($sub_cats as $sub_category): ?>
-                                <li><a href="<?php get_term_link($sub_category->slug, 'product_cat') ?>"><?php echo $sub_category->name; ?></a></li>
+                    if ($sub_cats):
+                        ?>
+                        <ul class="other-cat-sub">
+                            <?php foreach ($sub_cats as $sub_category): ?>
+                                <li>
+                                    <a href="<?php get_term_link($sub_category->slug, 'product_cat'); ?>">
+                                        <?php esc_html_e($sub_category->name, 'sunio'); ?>
+                                    </a>
+                                </li>
                             <?php endforeach; ?>
                         </ul>
                     <?php endif; ?>
-
-
-
                 </li>
             <?php endif; ?>
         <?php endforeach; ?>

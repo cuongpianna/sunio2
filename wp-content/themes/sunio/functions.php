@@ -147,6 +147,7 @@ final class sunio_Theme_Class {
 		// Javascript and CSS Paths
 		define( 'sunio_JS_DIR_URI', sunio_THEME_URI .'/assets/js/' );
 		define( 'sunio_CSS_DIR_URI', sunio_THEME_URI .'/assets/css/' );
+		define('sunio_RESOURCE_URL', sunio_THEME_URI .'/assets/');
 
 		// Include Paths
 		define( 'sunio_INC_DIR', sunio_THEME_DIR .'/inc/' );
@@ -370,13 +371,15 @@ final class sunio_Theme_Class {
 		// Define dir
 		$dir = sunio_CSS_DIR_URI;
 		$theme_version = sunio_THEME_VERSION;
+        $resoure_url = sunio_RESOURCE_URL;
 
 		// Remove font awesome style from plugins
 		wp_deregister_style( 'font-awesome' );
 		wp_deregister_style( 'fontawesome' );
 
 		// Load font awesome style
-		wp_enqueue_style( 'font-awesome', $dir .'third/font-awesome.min.css', false, '4.7.0' );
+                wp_enqueue_style( 'font-awesome', $resoure_url .'fonts/font-awesome/css/fontawesome-all.css', false, '4.7.0' );
+//		wp_enqueue_style( 'font-awesome', $dir .'third/font-awesome.min.css', false, '4.7.0' );
 
         // Load font awesome style
         wp_enqueue_style( 'bootstrap', $dir .'third/bootstrap.min.css', false, '4.7.0' );

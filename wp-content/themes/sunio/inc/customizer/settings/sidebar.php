@@ -76,7 +76,7 @@ if ( ! class_exists( 'sunio_Sidebar_Customizer' ) ) :
 			) );
 			$wp_customize->add_setting( 'sunio_sidebar_left_padding', array(
 				'transport' 			=> 'postMessage',
-				'default'           	=> '30',
+				'default'           	=> '0',
 				'sanitize_callback' 	=> 'sunio_sanitize_number',
 			) );
 

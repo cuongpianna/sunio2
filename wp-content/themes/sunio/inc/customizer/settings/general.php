@@ -470,33 +470,11 @@ if ( ! class_exists( 'sunio_General_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Main Container Width
-			 */
-			$wp_customize->add_setting( 'sunio_main_container_width', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> '1200',
-				'sanitize_callback' 	=> 'sunio_sanitize_number',
-			) );
-
-			$wp_customize->add_control( new sunio_Customizer_Range_Control( $wp_customize, 'sunio_main_container_width', array(
-				'label'	   				=> esc_html__( 'Main Container Width (px)', 'sunio' ),
-				'section'  				=> 'sunio_general_settings',
-				'settings' 				=> 'sunio_main_container_width',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'sunio_cac_hasnt_boxed_layout',
-			    'input_attrs' 			=> array(
-			        'min'   => 0,
-			        'max'   => 4096,
-			        'step'  => 1,
-			    ),
-			) ) );
-
-			/**
 			 * Content Width
 			 */
 			$wp_customize->add_setting( 'sunio_left_container_width', array(
 				'transport' 			=> 'postMessage',
-				'default'           	=> '72',
+				'default'           	=> '75',
 				'sanitize_callback' 	=> 'sunio_sanitize_number',
 			) );
 
@@ -517,7 +495,7 @@ if ( ! class_exists( 'sunio_General_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'sunio_sidebar_width', array(
 				'transport' 			=> 'postMessage',
-				'default'           	=> '28',
+				'default'           	=> '25',
 				'sanitize_callback' 	=> 'sunio_sanitize_number',
 			) );
 
@@ -2803,9 +2781,8 @@ if ( ! class_exists( 'sunio_General_Customizer' ) ) :
 			$boxed_inner_bg 				= get_theme_mod( 'sunio_boxed_inner_bg', '#ffffff' );
 			$separate_content_padding 		= get_theme_mod( 'sunio_separate_content_padding', '30px' );
 			$separate_widgets_padding 		= get_theme_mod( 'sunio_separate_widgets_padding', '30px' );
-			$main_container_width 			= get_theme_mod( 'sunio_main_container_width', '1200' );
-			$left_container_width 			= get_theme_mod( 'sunio_left_container_width', '72' );
-			$sidebar_width 					= get_theme_mod( 'sunio_sidebar_width', '28' );
+			$left_container_width 			= get_theme_mod( 'sunio_left_container_width', '76' );
+			$sidebar_width 					= get_theme_mod( 'sunio_sidebar_width', '24' );
 			$content_top_padding 			= get_theme_mod( 'sunio_page_content_top_padding' );
 			$content_bottom_padding 		= get_theme_mod( 'sunio_page_content_bottom_padding' );
 			$tablet_content_top_padding 	= get_theme_mod( 'sunio_page_content_tablet_top_padding' );
@@ -3026,11 +3003,6 @@ if ( ! class_exists( 'sunio_General_Customizer' ) ) :
 			// Separate widgets padding
 			if ( ! empty( $separate_widgets_padding ) && '30px' != $separate_widgets_padding ) {
 				$css .= '.separate-layout .widget-area .sidebar-box{padding:'. $separate_widgets_padding .';}';
-			}
-
-			// Content top padding
-			if ( ! empty( $main_container_width ) && '1200' != $main_container_width ) {
-				$css .= '.container{width:'. $main_container_width .'px;}';
 			}
 
 			// Content top padding
