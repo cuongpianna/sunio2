@@ -3,19 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="ae4179f4-8f47-46b1-9394-b6d9a027a59b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/woocommerce/templates/archive-product.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/woocommerce/templates/archive-product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/woocommerce/templates/taxonomy-product_cat.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/woocommerce/templates/taxonomy-product_cat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-extra/azthemes-extra.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-extra/azthemes-extra.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/style.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/woo/woocommerce.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/woo/woocommerce.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/woo/woocommerce.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/woo/woocommerce.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/settings/general.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/settings/general.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/settings/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/settings/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/sass/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/sass/_layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/sass/woocommerce.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/sass/woocommerce.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/settings/woocommerce.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/settings/woocommerce.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/inc/woocommerce/woocommerce-config.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/inc/woocommerce/woocommerce-config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/inc/woocommerce/woocommerce-helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/inc/woocommerce/woocommerce-helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/sass/base/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/sass/base/_main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/sass/woo/_woo-sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/sass/woo/_woo-sidebar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/woocommerce/sunio/woo-sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/woocommerce/sunio/woo-sidebar.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -79,6 +78,8 @@
       <workItem from="1575602710967" duration="7758000" />
       <workItem from="1576057112775" duration="1279000" />
       <workItem from="1576806923130" duration="2679000" />
+      <workItem from="1576892524549" duration="2670000" />
+      <workItem from="1576910615195" duration="4372000" />
     </task>
     <servers />
   </component>

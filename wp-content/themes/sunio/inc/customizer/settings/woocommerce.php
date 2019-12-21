@@ -1248,7 +1248,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'sunio_woocommerce_shop_columns', array(
 				'transport' 			=> 'postMessage',
-				'default'           	=> '3',
+				'default'           	=> '4',
 				'sanitize_callback' 	=> 'sunio_sanitize_number',
 			) );
 

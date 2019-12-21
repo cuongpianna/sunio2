@@ -153,7 +153,7 @@ if ( ! function_exists( 'sunio_woo_product_elements_positioning' ) ) {
 	function sunio_woo_product_elements_positioning() {
 
 		// Default sections
-		$sections = array( 'image', 'category', 'title', 'price-rating', 'description' , 'button' );
+		$sections = array( 'image', 'title','description' );
 
 		// Get sections from Customizer
 		$sections = get_theme_mod( 'sunio_woo_product_elements_positioning', $sections );

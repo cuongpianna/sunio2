@@ -561,8 +561,7 @@ final class sunio_Theme_Class {
 		wp_deregister_style( 'fontawesome' );
 
 		// Load font awesome style
-                wp_enqueue_style( 'font-awesome', $resoure_url .'fonts/font-awesome/css/fontawesome-all.css', false, '4.7.0' );
-//		wp_enqueue_style( 'font-awesome', $dir .'third/font-awesome.min.css', false, '4.7.0' );
+        wp_enqueue_style( 'font-awesome', $resoure_url .'fonts/font-awesome/css/fontawesome-all.css', false, '4.7.0' );
 
         // Load font awesome style
         wp_enqueue_style( 'bootstrap', $dir .'third/bootstrap.min.css', false, '4.7.0' );
@@ -655,6 +654,9 @@ final class sunio_Theme_Class {
 		
 		// Localize array
 		wp_localize_script( 'sunio-main', 'sunioLocalize', $localize_array );
+
+		// sunio scripts
+        wp_enqueue_script( 'sunio-scripts', $dir .'third/woo/sunio.min.js', array( 'jquery' ), $theme_version, true );
 
 	}
 

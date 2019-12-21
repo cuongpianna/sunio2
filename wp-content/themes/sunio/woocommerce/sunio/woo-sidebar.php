@@ -22,9 +22,6 @@ $other_cates = get_categories($other_cate_args);
 
 $args = array(
     'taxonomy' => 'product_cat',
-//    'orderby'      => $orderby,
-//    'show_count'   => $show_count,
-//    'pad_counts'   => $pad_counts,
     'hierarchical' => 1,
     'title_li' => '',
     'hide_empty' => 0,
@@ -49,7 +46,7 @@ $other_cates = get_categories($args);
         <ul class="current-cat">
             <?php foreach ($sub_current_cates as $value): ?>
                 <li>
-                    <i class="fas fa-angle-right"></i>
+                    <i class="fas fa-caret-right"></i>
                     <a href="<?php esc_url(get_term_link($value->slug, 'product_cat')); ?>">
                         <?php esc_html_e($value->name, 'sunio'); ?>
                     </a>
@@ -62,22 +59,30 @@ $other_cates = get_categories($args);
     <ul class="other-cat">
         <?php foreach ($other_cates as $cat): ?>
             <?php if ($cat->category_parent == 0): $category_id = $cat->term_id; ?>
-                <li>
+            <?php
+                $args2 = array(
+                    'taxonomy' => $taxonomy,
+                    'child_of' => 0,
+                    'parent' => $category_id,
+                    'hierarchical' => 1,
+                    'title_li' => $title,
+                    'hide_empty' => 0
+                );
+                $sub_cats = get_categories($args2);
+                if($sub_cats){
+                    $class = 'has-sub';
+                }
+                ?>
+                <li  <?php if($sub_cats): ?> class="<?php esc_attr_e($class, 'sunio'); ?>" <?php endif; ?> >
                     <a href="<?php get_term_link($cat->slug, 'product_cat'); ?>">
                         <?php esc_html_e($cat->name, 'sunio'); ?>
                     </a>
 
                     <?php
-                    $args2 = array(
-                        'taxonomy' => $taxonomy,
-                        'child_of' => 0,
-                        'parent' => $category_id,
-                        'hierarchical' => 1,
-                        'title_li' => $title,
-                        'hide_empty' => 0
-                    );
-                    $sub_cats = get_categories($args2);
                     if ($sub_cats):
+
+                        echo '<i class="fas fa-angle-right"></i>';
+
                         ?>
                         <ul class="other-cat-sub">
                             <?php foreach ($sub_cats as $sub_category): ?>

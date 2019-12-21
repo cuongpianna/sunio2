@@ -42,9 +42,64 @@
     li{
       padding: 10px 12px;
 
+      &:hover{
+        a{
+          color: #de4a4a;
+        }
+      }
+
       a{
         font-size: 14px;
-        color: #293571;
+        color: #333;
+      }
+    }
+  }
+
+  .other-cat{
+    background: #ffffff;
+
+    a{
+      &:hover{
+        color: #de4a4a;
+      }
+    }
+
+    li{
+      line-height: 1;
+      padding-top: 14px;
+      padding-bottom: 14px;
+
+      &:hover{
+        a{
+          color: #de4a4a ;
+        }
+      }
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    >li{
+      margin-left: 12px;
+      margin-right: 12px;
+      a{
+        font-size: 15px;
+      }
+
+      i{
+        font-size: 17px;
+        float: right;
+      }
+
+      .other-cat-sub{
+        display: none;
+      }
+
+      border-bottom: 1px solid #d7d7d7;
+
+      &:last-child{
+        border: none;
       }
     }
   }

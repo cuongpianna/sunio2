@@ -5134,7 +5134,56 @@ Woo Responsive
   padding: 10px 12px;
 }
 
+.woo-sidebar-wrap .current-cat li:hover a {
+  color: #de4a4a;
+}
+
 .woo-sidebar-wrap .current-cat li a {
   font-size: 14px;
-  color: #293571;
+  color: #333;
+}
+
+.woo-sidebar-wrap .other-cat {
+  background: #ffffff;
+}
+
+.woo-sidebar-wrap .other-cat a:hover {
+  color: #de4a4a;
+}
+
+.woo-sidebar-wrap .other-cat li {
+  line-height: 1;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.woo-sidebar-wrap .other-cat li:hover a {
+  color: #de4a4a;
+}
+
+.woo-sidebar-wrap .other-cat li:hover {
+  cursor: pointer;
+}
+
+.woo-sidebar-wrap .other-cat > li {
+  margin-left: 12px;
+  margin-right: 12px;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.woo-sidebar-wrap .other-cat > li a {
+  font-size: 15px;
+}
+
+.woo-sidebar-wrap .other-cat > li i {
+  font-size: 17px;
+  float: right;
+}
+
+.woo-sidebar-wrap .other-cat > li .other-cat-sub {
+  display: none;
+}
+
+.woo-sidebar-wrap .other-cat > li:last-child {
+  border: none;
 }

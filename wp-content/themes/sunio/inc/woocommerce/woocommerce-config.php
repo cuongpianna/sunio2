@@ -998,8 +998,8 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function loop_shop_columns() {
-			$columns = get_theme_mod( 'sunio_woocommerce_shop_columns', '3' );
-			$columns = $columns ? $columns : '3';
+			$columns = get_theme_mod( 'sunio_woocommerce_shop_columns', '4' );
+			$columns = $columns ? $columns : '4';
 			return $columns;
 		}
 

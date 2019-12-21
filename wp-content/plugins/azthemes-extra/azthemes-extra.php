@@ -312,6 +312,7 @@ final class sunio_Extra {
 			'video',
 			'custom-header-logo',
 			'custom-header-nav',
+            'woo-categories'
 		) );
 
 		// Loop through widgets and load their files
