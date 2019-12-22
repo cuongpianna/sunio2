@@ -42,7 +42,7 @@ $heading = apply_filters( 'sunio_page_header_heading', $heading ); ?>
 
 <?php do_action( 'sunio_before_page_header' ); ?>
 
-<?php if(!is_shop() && !is_tax()): ?>
+<?php if(!is_shop() && !is_tax() && !sunio_is_woo_single()): ?>
 <header class="<?php echo esc_attr( $classes ); ?>">
 
     <?php do_action( 'sunio_before_page_header_inner' ); ?>

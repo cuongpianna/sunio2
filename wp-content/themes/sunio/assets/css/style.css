@@ -158,7 +158,6 @@ body .sunio-row {
 body .sunio-row .col {
   float: left;
   margin: 0 0 20px;
-  padding: 0 20px;
 }
 
 body .sunio-row .span_1_of_1 {
@@ -790,16 +789,14 @@ body.content-full-screen #content-wrap {
 }
 
 .content-left-sidebar .content-area {
-  float: right;
-  padding-left: 30px;
   padding-right: 0;
+  padding-left: 30px;
   border-left-width: 1px;
   border-right-width: 0;
+  float: right;
 }
 
 .content-left-sidebar .widget-area {
-  float: left;
-  padding-right: 30px;
   padding-left: 0;
 }
 

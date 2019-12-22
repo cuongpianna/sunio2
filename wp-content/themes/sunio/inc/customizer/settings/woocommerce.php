@@ -1332,7 +1332,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			 * List View Excerpt Length
 			 */
 			$wp_customize->add_setting( 'sunio_woo_list_excerpt_length', array(
-				'default'           	=> '60',
+				'default'           	=> '10',
 				'sanitize_callback' 	=> 'sunio_sanitize_number',
 			) );
 
@@ -1354,7 +1354,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			 * Shop Sort
 			 */
 			$wp_customize->add_setting( 'sunio_woo_shop_sort', array(
-				'default'           	=> true,
+				'default'           	=> false,
 				'sanitize_callback' 	=> 'sunio_sanitize_checkbox',
 			) );
 
@@ -1370,7 +1370,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			 * Shop Result Count
 			 */
 			$wp_customize->add_setting( 'sunio_woo_shop_result_count', array(
-				'default'           	=> true,
+				'default'           	=> false,
 				'sanitize_callback' 	=> 'sunio_sanitize_checkbox',
 			) );
 
@@ -1808,9 +1808,13 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 				'priority' 				=> 10,
 				'choices' 				=> array(
 					'title'    			=> esc_html__( 'Title', 'sunio' ),
+                    'review'    		=> esc_html__( 'Review', 'sunio' ),
+                    'excerpt' 			=> esc_html__( 'Excerpt', 'sunio' ),
+                    'category' 			=> esc_html__( 'Category', 'sunio' ),
+                    'price' 			=> esc_html__( 'Price', 'sunio' ),
+                    'quantity'    		=> esc_html__( 'Quantity', 'sunio' ),
+                    'cart-button'    	=> esc_html__( 'Add To Cart', 'sunio' ),
 					'rating'       		=> esc_html__( 'Rating', 'sunio' ),
-					'price' 			=> esc_html__( 'Price', 'sunio' ),
-					'excerpt' 			=> esc_html__( 'Excerpt', 'sunio' ),
 					'quantity-button' 	=> esc_html__( 'Quantity & Add To Cart', 'sunio' ),
 					'meta' 				=> esc_html__( 'Product Meta', 'sunio' ),
 				),
@@ -1853,7 +1857,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'sunio_woo_product_image_width', array(
 				'transport' 			=> 'postMessage',
-				'default'           	=> '52',
+				'default'           	=> '40',
 				'sanitize_callback' 	=> 'sunio_sanitize_number',
 			) );
 
@@ -1874,7 +1878,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'sunio_woo_product_summary_width', array(
 				'transport' 			=> 'postMessage',
-				'default'           	=> '44',
+				'default'           	=> '60',
 				'sanitize_callback' 	=> 'sunio_sanitize_number',
 			) );
 
@@ -1973,7 +1977,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'sunio_woo_product_meta_tabs_position', array(
 				'transport' 			=> 'postMessage',
-				'default'           	=> 'center',
+				'default'           	=> 'left',
 				'sanitize_callback' 	=> 'sunio_sanitize_select',
 			) );
 
@@ -2066,7 +2070,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			 * Related Items Count
 			 */
 			$wp_customize->add_setting( 'sunio_woocommerce_related_count', array(
-				'default'           	=> '3',
+				'default'           	=> '4',
 				'sanitize_callback' 	=> 'sunio_sanitize_number',
 			) );
 
@@ -2086,7 +2090,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			 * Related Products Columns
 			 */
 			$wp_customize->add_setting( 'sunio_woocommerce_related_columns', array(
-				'default'           	=> '3',
+				'default'           	=> '4',
 				'sanitize_callback' 	=> 'sunio_sanitize_number',
 			) );
 
@@ -2119,7 +2123,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			 * Display Floating Bar
 			 */
 			$wp_customize->add_setting( 'sunio_woo_display_floating_bar', array(
-				'default'           	=> 'on',
+				'default'           	=> 'off',
 				'sanitize_callback' 	=> 'sunio_sanitize_select',
 			) );
 
@@ -5146,7 +5150,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public static function head_css( $output ) {
-		
+
 			// Global vars
 			$menu_icon_size										= get_theme_mod( 'sunio_woo_menu_icon_size' );
 			$menu_icon_size_tablet								= get_theme_mod( 'sunio_woo_menu_icon_size_tablet' );
@@ -5184,13 +5188,13 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			$woo_mobile_cart_sidebar_close_button_color			= get_theme_mod( 'sunio_woo_mobile_cart_sidebar_close_button_color', '#000000' );
 			$woo_mobile_cart_sidebar_title_color				= get_theme_mod( 'sunio_woo_mobile_cart_sidebar_title_color', '#555555' );
 			$woo_mobile_cart_sidebar_divider_color				= get_theme_mod( 'sunio_woo_mobile_cart_sidebar_divider_color', 'rgba(0,0,0,0.1)' );
-		
+
 			// Styling vars
 			$off_canvas_close_button_color 						= get_theme_mod( 'sunio_woo_off_canvas_close_button_color', '#333333' );
 			$off_canvas_close_button_hover_color 				= get_theme_mod( 'sunio_woo_off_canvas_close_button_hover_color', '#777777' );
 			$infinite_scroll_spinners_color 					= get_theme_mod( 'sunio_woo_infinite_scroll_spinners_color', '#333333' );
-			$woo_product_image_width 							= get_theme_mod( 'sunio_woo_product_image_width', '52' );
-			$woo_product_summary_width 							= get_theme_mod( 'sunio_woo_product_summary_width', '44' );
+			$woo_product_image_width 							= get_theme_mod( 'sunio_woo_product_image_width', '40' );
+			$woo_product_summary_width 							= get_theme_mod( 'sunio_woo_product_summary_width', '60' );
 			$floating_bar_bg 									= get_theme_mod( 'sunio_woo_floating_bar_bg', '#2c2c2c' );
 			$floating_bar_title_color 							= get_theme_mod( 'sunio_woo_floating_bar_title_color', '#ffffff' );
 			$floating_bar_price_color 							= get_theme_mod( 'sunio_woo_floating_bar_price_color', '#ffffff' );
@@ -6178,27 +6182,27 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 			if ( ! empty( $single_product_navigation_bg ) ) {
 				$css .= '.azt-product-nav li a.azt-nav-link{background-color:'. $single_product_navigation_bg .';}';
 			}
-			
+
 			// Add single product navigation background color
 			if ( ! empty( $single_product_navigation_hover_bg ) && '#13aff0' != $single_product_navigation_hover_bg ) {
 				$css .= '.azt-product-nav li a.azt-nav-link:hover{background-color:'. $single_product_navigation_hover_bg .';}';
 			}
-			
+
 			// Add single product navigation color
 			if ( ! empty( $single_product_navigation_color ) && '#333333' != $single_product_navigation_color ) {
 				$css .= '.azt-product-nav li a.azt-nav-link{color:'. $single_product_navigation_color .';}';
 			}
-			
+
 			// Add single product navigation color
 			if ( ! empty( $single_product_navigation_hover_color ) && '#ffffff' != $single_product_navigation_hover_color ) {
 				$css .= '.azt-product-nav li a.azt-nav-link:hover{color:'. $single_product_navigation_hover_color .';}';
 			}
-			
+
 			// Add single product navigation border color
 			if ( ! empty( $single_product_navigation_border_color ) && '#e9e9e9' != $single_product_navigation_border_color ) {
 				$css .= '.azt-product-nav li a.azt-nav-link{border-color:'. $single_product_navigation_border_color .';}';
 			}
-			
+
 			// Add single product navigation border color
 			if ( ! empty( $single_product_navigation_hover_border_color ) && '#13aff0' != $single_product_navigation_hover_border_color ) {
 				$css .= '.azt-product-nav li a.azt-nav-link:hover{border-color:'. $single_product_navigation_hover_border_color .';}';
@@ -6503,7 +6507,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Customizer' ) ) :
 				}
 
 			}
-				
+
 			// Return CSS
 			if ( ! empty( $css ) ) {
 				$output .= '/* WooCommerce CSS */'. $css;

@@ -63,16 +63,14 @@ body.content-full-screen #content-wrap {
 
 .content-left-sidebar {
 	.content-area {
-		float: right;
-		padding-left: 30px;
 		padding-right: 0;
+		padding-left: 30px;
 		border-left-width: 1px;
 		border-right-width: 0;
+		float: right;
 	}
 
 	.widget-area {
-		float: left;
-		padding-right: 30px;
 		padding-left: 0;
 	}
 }

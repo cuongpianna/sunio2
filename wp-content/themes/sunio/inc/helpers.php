@@ -265,7 +265,7 @@ if ( ! function_exists( 'sunio_body_classes' ) ) {
 			}
 
 			// Tabs position
-			$woo_tabs = get_theme_mod( 'sunio_woo_product_meta_tabs_position', 'center' );
+			$woo_tabs = get_theme_mod( 'sunio_woo_product_meta_tabs_position', 'left' );
 			if ( sunio_is_woo_single()
 				&& 'center' != $woo_tabs ) {
 				$classes[] = 'woo-'. $woo_tabs .'-tabs';

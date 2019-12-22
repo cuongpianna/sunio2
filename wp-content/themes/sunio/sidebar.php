@@ -20,7 +20,7 @@ if ( in_array( sunio_post_layout(), array( 'full-screen', 'full-width' ) ) ) {
         <div id="right-sidebar-inner" class="clr">
 
             <?php
-            if(is_shop() || is_tax()){
+            if(is_shop() || is_tax() || sunio_is_woo_single()){
                 if ( $sidebar_type != 'woo-sidebar' && $sidebar = sunio_get_sidebar() ) {
                     dynamic_sidebar( $sidebar );
                 } elseif($sidebar = sunio_get_sidebar() && $sidebar_type='woo-sidebar'){

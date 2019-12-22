@@ -29,7 +29,9 @@ foreach ( $elements as $element ) {
 
 	// Price
 	if ( 'price' == $element ) {
-		woocommerce_template_single_price();
+	    echo '<div class="price">';
+		wc_get_template_part('sunio/single-price');
+		echo '</div>';
 	}
 
 	// Excerpt
@@ -46,6 +48,40 @@ foreach ( $elements as $element ) {
 	if ( 'meta' == $element ) {
 		woocommerce_template_single_meta();
 	}
+
+    // Reviews
+    if ( 'review' == $element ) {
+
+        do_action( 'sunio_before_archive_product_add_to_cart' );
+
+        echo '<div class="review">';
+
+        echo wc_get_template_part('sunio/single-review');
+
+        echo '</div>';
+
+    }
+
+    if ( 'category' == $element ) {
+
+        echo '<div class="category">';
+
+        wc_get_template_part('sunio/single-category');
+
+        echo '</div>';
+
+    }
+
+    if ( 'quantity' == $element ) {
+
+        echo '<div class="quantity-button">';
+
+        echo '<div class="quantuty-count">Số lượng</div>';
+        woocommerce_template_single_add_to_cart();
+
+        echo '</div>';
+
+    }
 
 	do_action( 'sunio_after_single_product_' . $element );
 

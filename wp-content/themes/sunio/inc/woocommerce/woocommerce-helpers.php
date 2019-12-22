@@ -183,7 +183,7 @@ if ( ! function_exists( 'sunio_woo_summary_elements_positioning' ) ) {
 	function sunio_woo_summary_elements_positioning() {
 
 		// Default sections
-		$sections = array( 'title', 'rating', 'price', 'excerpt', 'quantity-button', 'meta' );
+		$sections = array( 'title', 'review', 'excerpt', 'price', 'category','quantity');
 
 		// Get sections from Customizer
 		$sections = get_theme_mod( 'sunio_woo_summary_elements_positioning', $sections );

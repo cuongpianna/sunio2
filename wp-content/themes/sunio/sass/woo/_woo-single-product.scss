@@ -1,0 +1,214 @@
+/*------------------------------------------------------------------
+Woo Single Product
+-------------------------------------------------------------------*/
+
+.woocommerce {
+  div.product{
+    .summary-wrap{
+      overflow: auto;
+      background: #f2f3f7;
+      padding: 9px;
+
+      .summary-content{
+        overflow: auto;
+        background: #ffffff;
+        border-radius: 5px;
+      }
+    }
+
+    .woocommerce-product-gallery{
+      padding: 0 15px;
+    }
+
+    .summary.entry-summary{
+      padding-left: 30px;
+      border-left: 1px solid #d7d7d7;
+      margin-bottom: 0;
+      padding-bottom: 30px;
+      padding-top: 15px;
+
+
+      h2.single-post-title{
+        padding-bottom: 0;
+        border-bottom: none;
+        font-size: 26px;
+        line-height: 1;
+      }
+
+      div.review{
+        display: flex;
+
+        div.star-rating{
+          margin-right: 5px;
+        }
+
+        .review-count{
+          margin-left: 12px;
+        }
+      }
+
+      .woocommerce-product-details__short-description{
+        margin-top: 12px;
+        font-size: 15px;
+        color: #333;
+
+      }
+
+      .category{
+        margin-right: 120px;
+        border-bottom: 1px solid #d7d7d7;
+        padding-bottom: 10px;
+
+        span.categories{
+          font-size: 16px;
+          color: #333;
+        }
+
+        a{
+          font-size: 16px;
+          color: #929292;
+          
+          &:hover{
+            color: #de4a4a;
+          }
+        }
+      }
+
+      .price{
+        margin-top: 10px;
+        color: #333;
+        font-size: 16px;
+
+        .price-value{
+          color: #f8980d;
+          font-weight: bold;
+        }
+      }
+
+      .quantity-button{
+        display: flex;
+        margin-top: 15px;
+
+        .quantuty-count{
+          font-size: 17px;
+          color: #333;
+        }
+
+        form.cart{
+          margin-left: 15px;
+          padding: 0;
+          margin-top: 0;
+          border: none;
+
+          a.minus{
+            border-radius: 50%;
+            background: #dedede;
+            border: none;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            min-height: 25px;
+            font-size: 23px;
+            color: #333;
+            &:hover{
+              background: #de4a4a;
+              color: white;
+            }
+          }
+
+          input.input-text{
+            border: none;
+            color: #333;
+            font-size: 27px;
+            height: 2px;
+            margin: 0 15px;
+          }
+
+          a.plus{
+            border-radius: 50%;
+            background: #dedede;
+            border: none;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            min-height: 25px;
+            font-size: 23px;
+            color: #333;
+            &:hover{
+              background: #de4a4a;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .woocomerce-tab-container{
+      margin-top: 20px;
+      padding: 7px;
+      background: #f2f3f7;
+
+      .woocommerce-tabs.wc-tabs-wrapper{
+        padding: 0;
+        background: #ffffff;
+
+        ul.tabs.wc-tabs{
+          border: none;
+          background: #f2f3f7;
+
+          li.active{
+            background: #ffffff;
+            border-bottom: none;
+            a{
+              border: none;
+            }
+          }
+
+          li{
+            background: #f4f4f4;
+            margin-right: 3px;
+            border: 1px solid #e1e1e3;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            a{
+              color: #e8690c;
+              border: none;
+              padding: 10px 35px;
+            }
+          }
+        }
+
+        .woocommerce-Tabs-panel{
+          padding: 15px 20px;
+        }
+      }
+    }
+  }
+
+  .related.products{
+    h2{
+      border-bottom: 2px solid #eee;
+      margin-bottom: 25px;
+      .pad{
+        padding-bottom: 9px;
+        display: table;
+        border-bottom: 2px solid #ed3237;
+        position: relative;
+        bottom: -2px;
+      }
+    }
+
+    ul.products{
+      margin: 0;
+    }
+  }
+}
+
+div.star-rating{
+  span{
+    &::before{
+      color: #f29c21;
+    }
+  }
+}
+

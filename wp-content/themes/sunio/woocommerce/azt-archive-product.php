@@ -86,7 +86,8 @@ echo '<ul class="woo-entry-inner clr">';
 
 			if ( ( sunio_is_woo_shop() || sunio_is_woo_tax() )
 				&& get_theme_mod( 'sunio_woo_grid_list', true ) ) {
-				$length = get_theme_mod( 'sunio_woo_list_excerpt_length', '60' );
+				$length = get_theme_mod( 'sunio_woo_list_excerpt_length', 20 );
+				$length = (int)$length;
 				echo '<li class="woo-desc">';
 					if ( ! $length ) {
 						echo wp_kses_post( strip_shortcodes( $post->post_excerpt ) );

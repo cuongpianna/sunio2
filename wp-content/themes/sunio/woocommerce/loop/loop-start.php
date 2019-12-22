@@ -7,8 +7,11 @@
  * @version     9999
  */
 
+$columns = get_theme_mod('sunio_woocommerce_shop_columns', 4);
+$columns_class = 'sunio-row-'.$columns;
+
 // Classes
-$wrap_classes = array( 'products', 'sunio-row', 'clr' );
+$wrap_classes = array( 'products', 'sunio-row', 'clr', $columns_class);
 
 // List/grid style
 if ( ( sunio_is_woo_shop() || sunio_is_woo_tax() )

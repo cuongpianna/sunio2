@@ -107,6 +107,9 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 					add_action( 'wp_footer', array( $this, 'get_off_canvas_sidebar' ) );
 					add_action( 'woocommerce_before_shop_loop', array( $this, 'off_canvas_filter_button' ), 10 );
 				}
+
+                add_action( 'woocommerce_before_shop_loop', array( $this, 'product_breadcumb' ), 10 );
+
 				if ( get_theme_mod( 'sunio_woo_grid_list', true ) ) {
 					add_action( 'woocommerce_before_shop_loop', array( $this, 'grid_list_buttons' ), 10 );
 				}
@@ -189,8 +192,15 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 					add_action( 'woocommerce_before_single_product_summary', array( $this, 'product_next_prev_nav' ), 10 );
 				}
 
+				// Add summary before wrap
+                add_action( 'woocommerce_before_single_product_summary', array( $this, 'wrap_summary_product_before' ), 15 );
+                add_action( 'woocommerce_single_product_summary', array( $this, 'wrap_summary_product_after' ), 15 );
+                add_action( 'woocommerce_before_single_product_summary', array( $this, 'content_summary_product_before' ), 16 );
+                add_action( 'woocommerce_single_product_summary', array( $this, 'content_summary_product_after' ), 16 );
+
+
 				// Add floating bar
-				if ( 'on' == get_theme_mod( 'sunio_woo_display_floating_bar', 'on' ) ) {
+				if ( 'on' == get_theme_mod( 'sunio_woo_display_floating_bar', 'off' ) ) {
 					add_action( 'sunio_before_main', array( $this, 'floating_bar' ) );
 
 					// Ajax add to cart
@@ -460,13 +470,15 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 				remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 			}
 
+            add_filter('woocommerce_product_description_heading', '__return_empty_string');
+
 			// Remove orderby if disabled
-			if ( ! get_theme_mod( 'sunio_woo_shop_sort', true ) ) {
+			if ( ! get_theme_mod( 'sunio_woo_shop_sort', false ) ) {
 				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 			}
 
 			// Add result count if not disabled
-			if ( get_theme_mod( 'sunio_woo_shop_result_count', true ) ) {
+			if ( get_theme_mod( 'sunio_woo_shop_result_count', false ) ) {
 				add_action( 'woocommerce_before_shop_loop', array( $this, 'result_count' ), 31 );
 			}
 
@@ -700,7 +712,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 			}
 
 			// If floating bar
-			if ( 'on' == get_theme_mod( 'sunio_woo_display_floating_bar', 'on' )
+			if ( 'on' == get_theme_mod( 'sunio_woo_display_floating_bar', 'off' )
 				&& sunio_is_woo_single() ) {
 				wp_enqueue_style( 'sunio-woo-floating-bar', sunio_CSS_DIR_URI .'woo/woo-floating-bar.min.css' );
 				wp_enqueue_script( 'sunio-woo-floating-bar', sunio_JS_DIR_URI .'third/woo/woo-floating-bar.min.js', array( 'jquery' ), sunio_THEME_VERSION, true );
@@ -765,14 +777,14 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 			// If quick view, ajax add to cart or floating bar
 			if ( get_theme_mod( 'sunio_woo_quick_view', true )
 				|| true == get_theme_mod( 'sunio_woo_product_ajax_add_to_cart', false )
-				|| 'on' == get_theme_mod( 'sunio_woo_display_floating_bar', 'on' ) ) {
+				|| 'on' == get_theme_mod( 'sunio_woo_display_floating_bar', 'off' ) ) {
 				$array['ajax_url'] = admin_url( 'admin-ajax.php' );
 				$array['cart_url'] = apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url() );
 				$array['cart_redirect_after_add'] = get_option( 'woocommerce_cart_redirect_after_add' );
 			}
 
 			// Check if the floating bar is enabled for the quantity button
-			$array['floating_bar'] = get_theme_mod( 'sunio_woo_display_floating_bar', 'on' );
+			$array['floating_bar'] = get_theme_mod( 'sunio_woo_display_floating_bar', 'off' );
 
 			// Grouped product button text in the quick view
 			$array['grouped_text'] = esc_attr__( 'View products', 'sunio' );
@@ -916,12 +928,44 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 			echo apply_filters( 'sunio_off_canvas_filter_button_output', $output );
 		}
 
-		/**
-		 * Add grid/list buttons.
+        /**
+         * Add grid/list buttons.
+         *
+         * @since 1.1.1
+         */
+        public static function grid_list_buttons() {
+
+            // Return if is not in shop page
+            if ( ! sunio_is_woo_shop()
+                && ! sunio_is_woo_tax() ) {
+                return;
+            }
+
+            // Titles
+            $grid_view = esc_html__( 'Grid view', 'sunio' );
+            $list_view = esc_html__( 'List view', 'sunio' );
+
+            // Active class
+            if ( 'list' == get_theme_mod( 'sunio_woo_catalog_view', 'grid' ) ) {
+                $list = 'active ';
+                $grid = '';
+            } else {
+                $grid = 'active ';
+                $list = '';
+            }
+
+            $output = sprintf( '<nav class="sunio-grid-list"><a href="#" id="sunio-grid" title="%1$s" class="%2$sgrid-btn"><span class="icon-grid"></span></a><a href="#" id="sunio-list" title="%3$s" class="%4$slist-btn"><span class="icon-list"></span></a></nav>', esc_html( $grid_view ), esc_attr( $grid ), esc_html( $list_view ), esc_attr( $list ) );
+
+            echo wp_kses_post( apply_filters( 'sunio_grid_list_buttons_output', $output ) );
+        }
+
+
+        /**
+		 * Add product breadcumb.
 		 *
 		 * @since 1.1.1
 		 */
-		public static function grid_list_buttons() {
+		public static function product_breadcumb() {
 
 			// Return if is not in shop page
 			if ( ! sunio_is_woo_shop()
@@ -929,22 +973,12 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 				return;
 			}
 
-			// Titles
-			$grid_view = esc_html__( 'Grid view', 'sunio' );
-			$list_view = esc_html__( 'List view', 'sunio' );
+            $args = array(
+                'delimiter' => ' > ',
+            );
 
-			// Active class
-			if ( 'list' == get_theme_mod( 'sunio_woo_catalog_view', 'grid' ) ) {
-				$list = 'active ';
-				$grid = '';
-			} else {
-				$grid = 'active ';
-				$list = '';
-			}
+			echo woocommerce_breadcrumb($args);
 
-			$output = sprintf( '<nav class="sunio-grid-list"><a href="#" id="sunio-grid" title="%1$s" class="%2$sgrid-btn"><span class="icon-grid"></span></a><a href="#" id="sunio-list" title="%3$s" class="%4$slist-btn"><span class="icon-list"></span></a></nav>', esc_html( $grid_view ), esc_attr( $grid ), esc_html( $list_view ), esc_attr( $list ) );
-
-			echo wp_kses_post( apply_filters( 'sunio_grid_list_buttons_output', $output ) );
 		}
 
 		/**
@@ -1055,11 +1089,11 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 
 			// Get posts per page
 			$posts_per_page = get_theme_mod( 'sunio_woocommerce_related_count', '3' );
-			$posts_per_page = $posts_per_page ? $posts_per_page : '3';
+			$posts_per_page = $posts_per_page ? $posts_per_page : '4';
 
 			// Get columns
 			$columns = get_theme_mod( 'sunio_woocommerce_related_columns', '3' );
-			$columns = $columns ? $columns : '3';
+			$columns = $columns ? $columns : '4';
 
 			// Return array
 			return array(
@@ -1254,6 +1288,24 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 
 		<?php
 		}
+		/*
+		 * Product summary before
+		 */
+
+        public static function wrap_summary_product_before() {
+            echo '<div class="summary-wrap">';
+        }
+        public static function wrap_summary_product_after() {
+            echo '</div>';
+        }
+
+        public static function content_summary_product_before() {
+            echo '<div class="summary-content">';
+        }
+        public static function content_summary_product_after() {
+            echo '</div>';
+        }
+
 
 		/**
 		 * Add floating bar.
@@ -1421,7 +1473,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 			 // Var
 			$term           = get_term( $category->term_id, 'product_cat' );
 			$description    = $term->description;
-			$length 		= get_theme_mod( 'sunio_woo_list_excerpt_length', '60' );
+			$length 		= get_theme_mod( 'sunio_woo_list_excerpt_length', 20 );
 
 			// Description
 			if ( get_theme_mod( 'sunio_woo_grid_list', true )
