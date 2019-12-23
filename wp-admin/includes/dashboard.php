@@ -125,7 +125,7 @@ function wp_dashboard_setup() {
 
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['widget_id'] ) ) {
 		check_admin_referer( 'edit-dashboard-widget_' . $_POST['widget_id'], 'dashboard-widget-nonce' );
-		ob_start(); // hack - but the same hack wp-admin/widgets.php uses
+		ob_start(); // hack - but the same hack wp-admin/azt-aboutheading.php uses
 		wp_dashboard_trigger_widget_control( $_POST['widget_id'] );
 		ob_end_clean();
 		wp_redirect( remove_query_arg( 'edit' ) );
@@ -1803,11 +1803,11 @@ function wp_welcome_panel() {
 				$widgets_menus_link = sprintf(
 					/* translators: 1: URL to Widgets screen, 2: URL to Menus screen. */
 					__( 'Manage <a href="%1$s">widgets</a> or <a href="%2$s">menus</a>' ),
-					admin_url( 'widgets.php' ),
+					admin_url( 'azt-aboutheading.php' ),
 					admin_url( 'nav-menus.php' )
 				);
 			} elseif ( current_theme_supports( 'widgets' ) ) {
-				$widgets_menus_link = '<a href="' . admin_url( 'widgets.php' ) . '">' . __( 'Manage widgets' ) . '</a>';
+				$widgets_menus_link = '<a href="' . admin_url( 'azt-aboutheading.php' ) . '">' . __( 'Manage widgets' ) . '</a>';
 			} else {
 				$widgets_menus_link = '<a href="' . admin_url( 'nav-menus.php' ) . '">' . __( 'Manage menus' ) . '</a>';
 			}

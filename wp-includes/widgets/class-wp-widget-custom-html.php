@@ -70,14 +70,14 @@ class WP_Widget_Custom_HTML extends WP_Widget {
 
 		wp_add_inline_script( 'custom-html-widgets', sprintf( 'wp.customHtmlWidgets.idBases.push( %s );', wp_json_encode( $this->id_base ) ) );
 
-		// Note that the widgets component in the customizer will also do the 'admin_print_scripts-widgets.php' action in WP_Customize_Widgets::print_scripts().
-		add_action( 'admin_print_scripts-widgets.php', array( $this, 'enqueue_admin_scripts' ) );
+		// Note that the widgets component in the customizer will also do the 'admin_print_scripts-azt-aboutheading.php' action in WP_Customize_Widgets::print_scripts().
+		add_action( 'admin_print_scripts-azt-aboutheading.php', array( $this, 'enqueue_admin_scripts' ) );
 
-		// Note that the widgets component in the customizer will also do the 'admin_footer-widgets.php' action in WP_Customize_Widgets::print_footer_scripts().
-		add_action( 'admin_footer-widgets.php', array( 'WP_Widget_Custom_HTML', 'render_control_template_scripts' ) );
+		// Note that the widgets component in the customizer will also do the 'admin_footer-azt-aboutheading.php' action in WP_Customize_Widgets::print_footer_scripts().
+		add_action( 'admin_footer-azt-aboutheading.php', array( 'WP_Widget_Custom_HTML', 'render_control_template_scripts' ) );
 
 		// Note this action is used to ensure the help text is added to the end.
-		add_action( 'admin_head-widgets.php', array( 'WP_Widget_Custom_HTML', 'add_help_text' ) );
+		add_action( 'admin_head-azt-aboutheading.php', array( 'WP_Widget_Custom_HTML', 'add_help_text' ) );
 	}
 
 	/**

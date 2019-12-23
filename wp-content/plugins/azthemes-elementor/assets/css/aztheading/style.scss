@@ -1,0 +1,23 @@
+.sunio-image-box-wrapper{
+  .sunio-image-box-content{
+    .sunio-image-box-title{
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .sunio-image-box-description{
+      font-size: 15px;
+    }
+
+    a{
+      padding: 5px 30px;
+      border: 1px solid #303ab6;
+      font-size: 19px;
+      color: #303ab6;
+      border-radius: 40px;
+      margin-top: 20px;
+      display: inline-block;
+      //border-radius: 20%;
+    }
+  }
+}

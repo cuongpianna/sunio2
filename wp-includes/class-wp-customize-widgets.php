@@ -333,12 +333,12 @@ final class WP_Customize_Widgets {
 	 */
 	public function customize_controls_init() {
 		/** This action is documented in wp-admin/includes/ajax-actions.php */
-		do_action( 'load-widgets.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( 'load-azt-aboutheading.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 
 		/** This action is documented in wp-admin/includes/ajax-actions.php */
-		do_action( 'widgets.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( 'azt-aboutheading.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 
-		/** This action is documented in wp-admin/widgets.php */
+		/** This action is documented in wp-admin/azt-aboutheading.php */
 		do_action( 'sidebar_admin_setup' );
 	}
 
@@ -636,28 +636,28 @@ final class WP_Customize_Widgets {
 	}
 
 	/**
-	 * Calls admin_print_styles-widgets.php and admin_print_styles hooks to
+	 * Calls admin_print_styles-azt-aboutheading.php and admin_print_styles hooks to
 	 * allow custom styles from plugins.
 	 *
 	 * @since 3.9.0
 	 */
 	public function print_styles() {
 		/** This action is documented in wp-admin/admin-header.php */
-		do_action( 'admin_print_styles-widgets.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( 'admin_print_styles-azt-aboutheading.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 
 		/** This action is documented in wp-admin/admin-header.php */
 		do_action( 'admin_print_styles' );
 	}
 
 	/**
-	 * Calls admin_print_scripts-widgets.php and admin_print_scripts hooks to
+	 * Calls admin_print_scripts-azt-aboutheading.php and admin_print_scripts hooks to
 	 * allow custom scripts from plugins.
 	 *
 	 * @since 3.9.0
 	 */
 	public function print_scripts() {
 		/** This action is documented in wp-admin/admin-header.php */
-		do_action( 'admin_print_scripts-widgets.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( 'admin_print_scripts-azt-aboutheading.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 
 		/** This action is documented in wp-admin/admin-header.php */
 		do_action( 'admin_print_scripts' );
@@ -679,7 +679,7 @@ final class WP_Customize_Widgets {
 		wp_enqueue_script( 'customize-widgets' );
 
 		/** This action is documented in wp-admin/admin-header.php */
-		do_action( 'admin_enqueue_scripts', 'widgets.php' );
+		do_action( 'admin_enqueue_scripts', 'azt-aboutheading.php' );
 
 		/*
 		 * Export available widgets with control_tpl removed from model
@@ -860,13 +860,13 @@ final class WP_Customize_Widgets {
 	 */
 	public function print_footer_scripts() {
 		/** This action is documented in wp-admin/admin-footer.php */
-		do_action( 'admin_print_footer_scripts-widgets.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( 'admin_print_footer_scripts-azt-aboutheading.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 
 		/** This action is documented in wp-admin/admin-footer.php */
 		do_action( 'admin_print_footer_scripts' );
 
 		/** This action is documented in wp-admin/admin-footer.php */
-		do_action( 'admin_footer-widgets.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( 'admin_footer-azt-aboutheading.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 	}
 
 	/**
@@ -1538,12 +1538,12 @@ final class WP_Customize_Widgets {
 		}
 
 		/** This action is documented in wp-admin/includes/ajax-actions.php */
-		do_action( 'load-widgets.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( 'load-azt-aboutheading.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 
 		/** This action is documented in wp-admin/includes/ajax-actions.php */
-		do_action( 'widgets.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( 'azt-aboutheading.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 
-		/** This action is documented in wp-admin/widgets.php */
+		/** This action is documented in wp-admin/azt-aboutheading.php */
 		do_action( 'sidebar_admin_setup' );
 
 		$widget_id = $this->get_post_value( 'widget-id' );

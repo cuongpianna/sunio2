@@ -2,3 +2,5 @@ wp-content/plugins/azthemes-elementor/node_modules/
 wp-content/uploads/wc-logs/
 wp-snapshots/
 wp-content/uploads/
+.idea/
+node_modules/

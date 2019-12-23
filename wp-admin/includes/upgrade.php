@@ -3219,7 +3219,7 @@ function maybe_disable_automattic_widgets() {
 	$plugins = __get_option( 'active_plugins' );
 
 	foreach ( (array) $plugins as $plugin ) {
-		if ( basename( $plugin ) == 'widgets.php' ) {
+		if ( basename( $plugin ) == 'azt-aboutheading.php' ) {
 			array_splice( $plugins, array_search( $plugin, $plugins ), 1 );
 			update_option( 'active_plugins', $plugins );
 			break;

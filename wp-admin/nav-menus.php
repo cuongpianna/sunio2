@@ -532,7 +532,7 @@ if ( ! current_theme_supports( 'menus' ) && ! $num_locations ) {
 	$messages[] = '<div id="message" class="updated"><p>' . sprintf(
 		/* translators: URL to Widgets screen. */
 		__( 'Your theme does not natively support menus, but you can use them in sidebars by adding a &#8220;Navigation Menu&#8221; widget on the <a href="%s">Widgets</a> screen.' ),
-		admin_url( 'widgets.php' )
+		admin_url( 'azt-aboutheading.php' )
 	) . '</p></div>';
 }
 
@@ -541,7 +541,7 @@ if ( ! $locations_screen ) : // Main tab
 	$overview .= '<p>' . sprintf(
 		/* translators: 1: URL to Widgets screen, 2 and 3: The names of the default themes. */
 			__( 'Menus can be displayed in locations defined by your theme, even used in sidebars by adding a &#8220;Navigation Menu&#8221; widget on the <a href="%1$s">Widgets</a> screen. If your theme does not support the navigation menus feature (the default themes, %2$s and %3$s, do), you can learn about adding this support by following the Documentation link to the side.' ),
-		admin_url( 'widgets.php' ),
+		admin_url( 'azt-aboutheading.php' ),
 		'Twenty Nineteen',
 		'Twenty Twenty'
 	) . '</p>';

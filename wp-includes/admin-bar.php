@@ -950,7 +950,7 @@ function wp_admin_bar_appearance_menu( $wp_admin_bar ) {
 				'parent' => 'appearance',
 				'id'     => 'widgets',
 				'title'  => __( 'Widgets' ),
-				'href'   => admin_url( 'widgets.php' ),
+				'href'   => admin_url( 'azt-aboutheading.php' ),
 			)
 		);
 	}

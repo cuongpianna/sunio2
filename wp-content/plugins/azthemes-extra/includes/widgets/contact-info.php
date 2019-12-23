@@ -30,7 +30,7 @@ if ( ! class_exists( 'sunio_Extra_Contact_Info_Widget' ) ) {
 			);
 
 			// Since 1.3.8
-			add_action( 'admin_head-widgets.php', array( $this, 'social_widget_style' ) );
+			add_action( 'admin_head-azt-aboutheading.php', array( $this, 'social_widget_style' ) );
 		}
 
 		/**

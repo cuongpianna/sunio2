@@ -39,7 +39,7 @@ if ( ! class_exists( 'sunio_Extra_Tags_Widget' ) ) {
 		 * @param string $hook_suffix
 		 */
 		public function enqueue_scripts( $hook_suffix ) {
-			if ( 'widgets.php' !== $hook_suffix ) {
+			if ( 'azt-aboutheading.php' !== $hook_suffix ) {
 				return;
 			}
 

@@ -28,6 +28,13 @@
   position: absolute;
   right: 0;
   top: 0;
+  background: #de4a4a;
+  border: none;
+  color: #ffffff;
+}
+
+.custom-header-nav .custom_header-top .custom_header-search button:hover {
+  opacity: .9;
 }
 
 .custom-header-nav .custom_header-top .custom_header_cart {
@@ -88,17 +95,17 @@
   padding: 0;
 }
 
-.custom-header-nav .custom_header-bottom ul#menu-main-menu {
+.custom-header-nav .custom_header-bottom ul {
   margin: 0;
   list-style-type: none;
 }
 
-.custom-header-nav .custom_header-bottom ul#menu-main-menu > li {
+.custom-header-nav .custom_header-bottom ul > li {
   display: inline-block;
   padding-right: 75px;
 }
 
-.custom-header-nav .custom_header-bottom ul#menu-main-menu > li a {
+.custom-header-nav .custom_header-bottom ul > li a {
   color: #ffffff;
   font-weight: 600;
   font-size: 22px;
@@ -115,6 +122,28 @@
   position: relative;
   margin-left: -50vw;
   left: 50%;
+}
+
+/*------------------------------------*
+  $Nav
+*------------------------------------*/
+.sunio-image-box-wrapper .sunio-image-box-content .sunio-image-box-title {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.sunio-image-box-wrapper .sunio-image-box-content .sunio-image-box-description {
+  font-size: 15px;
+}
+
+.sunio-image-box-wrapper .sunio-image-box-content a {
+  padding: 5px 30px;
+  border: 1px solid #303ab6;
+  font-size: 19px;
+  color: #303ab6;
+  border-radius: 40px;
+  margin-top: 20px;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -235,7 +235,7 @@
 	width: auto !important;
 }
 
-/* Keep rule that is no longer necessary on widgets.php. */
+/* Keep rule that is no longer necessary on azt-aboutheading.php. */
 #available-widgets .widget-action {
 	display: none;
 }

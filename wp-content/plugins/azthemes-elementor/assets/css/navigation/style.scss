@@ -24,6 +24,13 @@
         position: absolute;
         right: 0;
         top: 0;
+        background: #de4a4a;
+        border: none;
+        color: #ffffff;
+
+        &:hover{
+          opacity: .9;
+        }
       }
     }
 
@@ -83,12 +90,12 @@
   .custom_header-bottom{
     line-height: 1;
     padding: 0;
-    ul#menu-main-menu{
+    ul{
       margin: 0;
       list-style-type: none;
     }
 
-    ul#menu-main-menu > li{
+    ul > li{
       display: inline-block;
       padding-right: 75px;
 

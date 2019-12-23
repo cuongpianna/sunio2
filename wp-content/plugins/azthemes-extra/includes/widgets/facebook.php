@@ -59,7 +59,7 @@ if ( ! class_exists( 'sunio_Extra_Facebook_Widget' ) ) {
 			if ( empty( $like_args['href'] ) || ! $this->is_valid_facebook_url( $like_args['href'] ) ) {
 				if ( current_user_can('edit_theme_options') ) {
 					echo $before_widget;
-					echo '<p>' . sprintf( esc_html__( 'It looks like your Facebook URL is incorrectly configured. Please check it in your <a href="%s">widget settings</a>.', 'sunio-extra' ), esc_url( admin_url( 'widgets.php' ) ) ) . '</p>';
+					echo '<p>' . sprintf( esc_html__( 'It looks like your Facebook URL is incorrectly configured. Please check it in your <a href="%s">widget settings</a>.', 'sunio-extra' ), esc_url( admin_url( 'azt-aboutheading.php' ) ) ) . '</p>';
 					echo $after_widget;
 				}
 				echo '<!-- Invalid Facebook Page URL -->';

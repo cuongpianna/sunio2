@@ -1,0 +1,89 @@
+/*------------------------------------------------------------------
+Woo-product-tabs
+-------------------------------------------------------------------*/
+.azt-product-filter .azt-tabs {
+  text-align: center;
+}
+
+.azt-product-filter .azt-tabs ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.azt-product-filter .azt-tabs ul li {
+  list-style: none;
+  margin-right: 40px;
+}
+
+.azt-product-filter .azt-tabs ul li a {
+  line-height: 1;
+  font-size: 16px;
+  padding: 0 0 8px;
+  position: relative;
+  color: #696969;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.azt-product-filter .azt-tabs ul li a:before {
+  position: absolute;
+  width: 0;
+  content: '';
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background: #333;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+.azt-product-filter .azt-tabs ul li a.active {
+  color: #333;
+}
+
+.azt-product-filter .azt-tabs ul li a.active:before {
+  width: 100%;
+}
+
+.azt-product-filter .azt-tabs ul li:first-child a {
+  padding-left: 0;
+}
+
+.azt-product-filter .azt-tabs ul li:hover a {
+  color: #333;
+}
+
+.azt-product-filter .azt-tabs ul li:hover a:before {
+  width: 100%;
+}
+
+.azt-product-filter .azt-tabs-content {
+  margin-top: 35px;
+}
+
+.azt-product-filter .azt-tabs-content > div {
+  display: none;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.azt-product-filter .azt-tabs-content > div.active {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .azt-product-filter .azt-tabs ul {
+    flex-direction: column;
+  }
+  .azt-product-filter .azt-tabs ul li {
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -63,11 +63,11 @@ if ( ! class_exists( 'sunio_Extra_About_Me_Widget' ) ) {
 					'customize_selective_refresh' => true,
 				)
 			);
-			add_action( 'load-widgets.php', array( $this, 'scripts' ), 100 );
+			add_action( 'load-azt-aboutheading.php', array( $this, 'scripts' ), 100 );
 
 			// Since 1.3.8
-			add_action( 'admin_head-widgets.php', array( $this, 'social_widget_style' ) );
-			add_action( 'admin_footer-widgets.php', array( $this, 'print_scripts' ) );
+			add_action( 'admin_head-azt-aboutheading.php', array( $this, 'social_widget_style' ) );
+			add_action( 'admin_footer-azt-aboutheading.php', array( $this, 'print_scripts' ) );
 		}
 
 		/**

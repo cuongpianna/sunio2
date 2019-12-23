@@ -161,7 +161,7 @@ if ( isset( $_POST['savewidget'] ) || isset( $_POST['removewidget'] ) ) {
 	if ( isset( $_POST['removewidget'] ) && $_POST['removewidget'] ) {
 
 		if ( ! in_array( $widget_id, $sidebar, true ) ) {
-			wp_redirect( admin_url( 'widgets.php?error=0' ) );
+			wp_redirect( admin_url( 'azt-aboutheading.php?error=0' ) );
 			exit;
 		}
 
@@ -212,7 +212,7 @@ if ( isset( $_POST['savewidget'] ) || isset( $_POST['removewidget'] ) ) {
 	}
 
 	wp_set_sidebars_widgets( $sidebars_widgets );
-	wp_redirect( admin_url( 'widgets.php?message=0' ) );
+	wp_redirect( admin_url( 'azt-aboutheading.php?message=0' ) );
 	exit;
 }
 
@@ -234,7 +234,7 @@ if ( isset( $_POST['removeinactivewidgets'] ) ) {
 		wp_set_sidebars_widgets( $sidebars_widgets );
 	}
 
-	wp_redirect( admin_url( 'widgets.php?message=0' ) );
+	wp_redirect( admin_url( 'azt-aboutheading.php?message=0' ) );
 	exit;
 }
 

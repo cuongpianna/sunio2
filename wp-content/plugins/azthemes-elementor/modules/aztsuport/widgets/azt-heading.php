@@ -66,6 +66,9 @@ class Azt_Heading extends Widget_Base {
 		return [ 'sunio-elements' ];
 	}
 
+    public function get_style_depends() {
+        return [ 'azt-sunio' ];
+    }
 
 	/**
 	 * Register image box widget controls.
@@ -92,28 +95,37 @@ class Azt_Heading extends Widget_Base {
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => __( 'This is the heading', 'sunio-elementor' ),
+				'default' => __( 'Giới thiệu', 'sunio-elementor' ),
 				'placeholder' => __( 'Enter your title', 'sunio-elementor' ),
 				'label_block' => true,
 			]
 		);
 
-		$this->add_control(
-			'description_text',
-			[
-				'label' => __( 'Content', 'sunio-elementor' ),
-				'type' => Controls_Manager::TEXTAREA,
-				'dynamic' => [
-					'active' => true,
-				],
-				'default' => __( 'Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'sunio-elementor' ),
-				'placeholder' => __( 'Enter your description', 'sunio-elementor' ),
-				'separator' => 'none',
-				'rows' => 10,
-				'show_label' => false,
-			]
-		);
+        $this->add_control(
+            'description_text',
+            [
+                'label' => '',
+                'type' => Controls_Manager::WYSIWYG,
+                'dynamic' => [
+                    'active' => true,
+                ],
+                'default' => __( 'Công ty TNHH.', 'sunio-elementor' ),
+            ]
+        );
 
+
+        $this->add_control(
+            'show_line',
+            [
+                'label' => __( 'Show line', 'sunio-elementor' ),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'yes' => 'Yes',
+                    'no' => 'No',
+                ],
+                'default' => 'yes',
+            ]
+        );
 
 
 		$this->add_control(
@@ -144,6 +156,31 @@ class Azt_Heading extends Widget_Base {
 				'default' => 'traditional',
 			]
 		);
+
+        $this->add_control(
+            'button_text',
+            [
+                'label' => __( 'Button Text', 'sunio-elementor' ),
+                'type' => Controls_Manager::TEXT,
+                'dynamic' => [
+                    'active' => true,
+                ],
+                'default' => __( 'Xem thêm', 'sunio-elementor' ),
+                'label_block' => true,
+            ]
+        );
+
+        $this->add_control(
+            'button_link',
+            [
+                'label' => __( 'Link', 'sunio-elementor' ),
+                'type' => Controls_Manager::TEXT,
+                'dynamic' => [
+                    'active' => true,
+                ],
+                'label_block' => true,
+            ]
+        );
 
 		$this->end_controls_section();
 
@@ -213,6 +250,10 @@ class Azt_Heading extends Widget_Base {
 			[
 				'label' => __( 'Spacing', 'sunio-elementor' ),
 				'type' => Controls_Manager::SLIDER,
+				'default' => [
+				  'unit' => 'px',
+                  'size' => '35'
+                ],
 				'range' => [
 					'px' => [
 						'min' => 0,
@@ -230,7 +271,7 @@ class Azt_Heading extends Widget_Base {
 			[
 				'label' => __( 'Color', 'sunio-elementor' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
+				'default' => '#b7bdc9',
 				'selectors' => [
 					'{{WRAPPER}} .sunio-image-box-content .sunio-image-box-title' => 'color: {{VALUE}};',
 				],
@@ -259,12 +300,33 @@ class Azt_Heading extends Widget_Base {
 			]
 		);
 
+        $this->add_responsive_control(
+            'desc_top_space',
+            [
+                'label' => __( 'Spacing', 'sunio-elementor' ),
+                'type' => Controls_Manager::SLIDER,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => '35'
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .sunio-image-box-description' => 'margin-top: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
 		$this->add_control(
 			'description_color',
 			[
 				'label' => __( 'Color', 'sunio-elementor' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
+				'default' => '#b7bdc9',
 				'selectors' => [
 					'{{WRAPPER}} .sunio-image-box-content .sunio-image-box-description' => 'color: {{VALUE}};',
 				],
@@ -284,7 +346,53 @@ class Azt_Heading extends Widget_Base {
 			]
 		);
 
-		$this->end_controls_section();
+        $this->add_control(
+            'heading_line',
+            [
+                'label' => __( 'Line', 'sunio-elementor' ),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_control(
+            'line_color',
+            [
+                'label' => __( 'Color', 'sunio-elementor' ),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#727892',
+                'selectors' => [
+                    '{{WRAPPER}} .sunio-image-box-content .line' => 'background: {{VALUE}};',
+                ],
+                'scheme' => [
+                    'type' => Scheme_Color::get_type(),
+                    'value' => Scheme_Color::COLOR_3,
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'line_width',
+            [
+                'label' => __( 'Width', 'sunio-elementor' ),
+                'type' => Controls_Manager::SLIDER,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 100,
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 1000,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .sunio-image-box-content .line' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
 	}
 
 	/**
@@ -316,6 +424,10 @@ class Azt_Heading extends Widget_Base {
 				$html .= sprintf( '<%1$s %2$s>%3$s</%1$s>', $settings['title_size'], $this->get_render_attribute_string( 'title_text' ), $title_html );
 			}
 
+			if($settings['show_line'] == 'yes'){
+			    $html .= '<div class="line" style="height: 3px"></div>';
+            }
+
 			if ( ! empty( $settings['description_text'] ) ) {
 				$this->add_render_attribute( 'description_text', 'class', 'sunio-image-box-description' );
 
@@ -323,6 +435,10 @@ class Azt_Heading extends Widget_Base {
 
 				$html .= sprintf( '<p %1$s>%2$s</p>', $this->get_render_attribute_string( 'description_text' ), $settings['description_text'] );
 			}
+
+			if($settings['button_text']){
+			    $html .= '<a class="sunio-button" href="' .$settings['button_link']. '">' . $settings['button_text'] . '</a>';
+            }
 
 			$html .= '</div>';
 		}
@@ -332,49 +448,4 @@ class Azt_Heading extends Widget_Base {
 		echo $html;
 	}
 
-	/**
-	 * Render image box widget output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 */
-	protected function _content_template() {
-		?>
-		<#
-		var html = '<div class="sunio-image-box-wrapper">';
-
-		var hasContent = !! ( settings.title_text || settings.description_text );
-
-		if ( hasContent ) {
-			html += '<div class="sunio-image-box-content">';
-
-			if ( settings.title_text ) {
-				var title_html = settings.title_text;
-
-				view.addRenderAttribute( 'title_text', 'class', 'sunio-image-box-title' );
-
-				view.addInlineEditingAttributes( 'title_text', 'none' );
-
-				html += '<' + settings.title_size  + ' ' + view.getRenderAttributeString( 'title_text' ) + '>' + title_html + '</' + settings.title_size  + '>';
-			}
-
-			if ( settings.description_text ) {
-				view.addRenderAttribute( 'description_text', 'class', 'sunio-image-box-description' );
-
-				view.addInlineEditingAttributes( 'description_text' );
-
-				html += '<p ' + view.getRenderAttributeString( 'description_text' ) + '>' + settings.description_text + '</p>';
-			}
-
-			html += '</div>';
-		}
-
-		html += '</div>';
-
-		print( html );
-		#>
-		<?php
-	}
 }
