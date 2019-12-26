@@ -2361,47 +2361,6 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
         }
 
 		/**
-		 * Add typography options for the WooCommerce product title
-		 *
-		 * @since 1.0.0
-		 */
-		public static function typography_settings( $settings ) {
-			$settings['woo_product_title'] = array(
-				'label' 				=> esc_html__( 'WooCommerce Product Title', 'sunio' ),
-				'target' 				=> '.woocommerce div.product .product_title',
-				'defaults' 				=> array(
-					'font-size' 		=> '24',
-					'color' 			=> '#333333',
-					'line-height' 		=> '1.4',
-					'letter-spacing' 	=> '0.6',
-				),
-			);
-
-			$settings['woo_product_price'] = array(
-				'label' 				=> esc_html__( 'WooCommerce Product Price', 'sunio' ),
-				'target' 				=> '.woocommerce div.product p.price',
-				'defaults' 				=> array(
-					'font-size' 		=> '36',
-					'line-height' 		=> '1',
-					'letter-spacing' 	=> '0',
-				),
-			);
-
-			$settings['woo_product_add_to_cart'] = array(
-				'label'                 => esc_html__( 'WooCommerce Product Add To Cart', 'sunio' ),
-				'target'                => '.woocommerce ul.products li.product .button, .woocommerce ul.products li.product .product-inner .added_to_cart',
-				'exclude' 				=> array( 'font-color' ),
-				'defaults'              => array(
-					'font-size'         => '12',
-					'line-height'       => '1.5',
-					'letter-spacing'    => '1',
-				),
-			);
-
-			return $settings;
-		}
-
-		/**
 		 * Supports WooCommerce Match Box extension by removing
 		 * duplicate single product summary features on the
 		 * product page.
