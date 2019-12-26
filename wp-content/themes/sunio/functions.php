@@ -575,6 +575,12 @@ final class sunio_Theme_Class {
 		// Register the slick style
 		wp_enqueue_style( 'slick', $dir .'third/slick.min.css', false, '1.6.0' );
 
+		// register owl slider
+
+        wp_enqueue_style( 'owl', $dir .'third/owl.carousel.min.css', false, '' );
+
+        wp_enqueue_style( 'owl-default', $dir .'third/owl.carousel.default.min.css', false, '' );
+
 		// Main Style.css File
 		wp_enqueue_style( 'sunio-style', $dir .'style.min.css', false, $theme_version );
 
@@ -651,6 +657,10 @@ final class sunio_Theme_Class {
 
 		// Load minified js
 		wp_enqueue_script( 'sunio-main', $dir .'main.min.js', array( 'jquery' ), $theme_version, true );
+
+		// owl js
+
+        wp_enqueue_script( 'owl-js', $dir .'third/owl.carousel.min.js', array( 'jquery' ), $theme_version, true );
 		
 		// Localize array
 		wp_localize_script( 'sunio-main', 'sunioLocalize', $localize_array );
@@ -1315,12 +1325,12 @@ function sunio_mini_cart($atts, $content = null) {
             <div class="cart-wrap  style1">
                 <div class="cart-total">
                     <div class="cart-total-left">
-                        <div class="cart-title">Cart</div>
+                        <div class="cart-title">Giỏ hàng</div>
                         <?php if(WC()->cart->get_cart_contents_count( ) == 0):  ?>
-                            <h6 class="cart-msg">Your cart is empty</h6>
+                            <h6 class="cart-msg">Giỏ hàng rỗng.</h6>
                         <?php else: ?>
                             <h6 class="cart-msg">
-                                <a href="<?php echo wc_get_cart_url(); ?>">View cart</a>
+                                <a href="<?php echo wc_get_cart_url(); ?>">Xem chi tiết</a>
                             </h6>
                         <?php endif; ?>
                     </div>

@@ -1,4 +1,4 @@
-/*! elementor - v2.8.0 - 09-12-2019 */
+/*! elementor - v2.8.2 - 16-12-2019 */
 @charset "UTF-8";
 .elementor-tags-list {
   display: none;
@@ -528,7 +528,6 @@ a.elementor-responsive-switcher {
 
 .elementor-update-preview {
   margin: 15px 15px 0;
-  background-color: #e6e9ec;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1092,7 +1091,7 @@ a.elementor-responsive-switcher {
 
 .elementor-control-type-popover_toggle .elementor-control-popover-toggle-reset-label {
   color: #c2cbd2;
-  padding-right: 5px; }
+  margin-right: 5px; }
 
 .elementor-control-type-popover_toggle .elementor-control-popover-toggle-toggle-label {
   width: 50px;
@@ -1116,7 +1115,7 @@ a.elementor-responsive-switcher {
 .elementor-control-type-repeater .elementor-control:not(.elementor-control-type-tab) {
   padding-right: 10px;
   padding-left: 10px;
-  padding-bottom: 15px; }
+  padding-bottom: 10px; }
 
 .elementor-control-type-repeater.elementor-repeater-has-minimum-rows .elementor-repeater-tool-remove {
   display: none; }
@@ -2539,7 +2538,10 @@ html.elementor-html {
 [data-elementor-device-mode="desktop"] .elementor-hidden-desktop,
 [data-elementor-device-mode="tablet"] .elementor-hidden-tablet,
 [data-elementor-device-mode="mobile"] .elementor-hidden-phone {
-  background-color: rgba(213, 218, 223, 0.8); }
+  background: -webkit-repeating-linear-gradient(325deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 1px, transparent 2px, transparent 9px);
+  background: -o-repeating-linear-gradient(325deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 1px, transparent 2px, transparent 9px);
+  background: repeating-linear-gradient(125deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 1px, transparent 2px, transparent 9px);
+  border: 1px solid rgba(0, 0, 0, 0.02); }
   [data-elementor-device-mode="desktop"] .elementor-hidden-desktop.elementor-section > .elementor-element-overlay,
   [data-elementor-device-mode="tablet"] .elementor-hidden-tablet.elementor-section > .elementor-element-overlay,
   [data-elementor-device-mode="mobile"] .elementor-hidden-phone.elementor-section > .elementor-element-overlay {

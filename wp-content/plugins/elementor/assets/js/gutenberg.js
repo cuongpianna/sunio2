@@ -1,4 +1,4 @@
-/*! elementor - v2.8.0 - 09-12-2019 */
+/*! elementor - v2.8.2 - 16-12-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -97,7 +97,7 @@ module.exports = !__webpack_require__(21) && !__webpack_require__(22)(function (
 
 /***/ }),
 
-/***/ 111:
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(51)('native-function-to-string', Function.toString);
@@ -217,7 +217,7 @@ module.exports = Array.isArray || function isArray(arg) {
 
 /***/ }),
 
-/***/ 17:
+/***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -358,7 +358,7 @@ var global = __webpack_require__(13);
 var hide = __webpack_require__(25);
 var has = __webpack_require__(46);
 var SRC = __webpack_require__(52)('src');
-var $toString = __webpack_require__(111);
+var $toString = __webpack_require__(112);
 var TO_STRING = 'toString';
 var TPL = ('' + $toString).split(TO_STRING);
 
@@ -519,7 +519,7 @@ module.exports = function (key) {
 "use strict";
 
 
-__webpack_require__(17);
+__webpack_require__(15);
 
 /* global jQuery, ElementorGutenbergSettings */
 (function ($) {

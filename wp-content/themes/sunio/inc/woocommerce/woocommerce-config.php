@@ -186,6 +186,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 				remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 				remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 				add_action( 'woocommerce_single_product_summary', array( $this, 'single_product_content' ), 10 );
+                add_action('woocommerce_single_product_thumbnailss', array( $this, 'single_product_thumbnails' ), 10 );
 
 				// Add product navigation
 				if ( true == get_theme_mod( 'sunio_woocommerce_display_navigation', true ) ) {
@@ -1984,6 +1985,15 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 			return ob_get_clean();
 
 		}
+
+
+        public static function single_product_thumbnails() {
+            if ( function_exists( 'wc_get_template' ) ) {
+                var_dump('cuong');
+
+                wc_get_template_part( 'sunio/single-product-thumbnails' );
+            }
+        }
 
 		/**
 		 * Add menu cart item to the Woo fragments so it updates with AJAX

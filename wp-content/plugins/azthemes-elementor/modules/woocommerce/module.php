@@ -11,7 +11,7 @@ class Module extends Module_Base {
 		return [
 			'Woo_Products',
 			'Woo_Products_Tabs',
-			'Woo_Categories'
+            'Woo_Category'
 		];
 	}
 

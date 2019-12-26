@@ -51,7 +51,6 @@ class AztElementorPlugin {
 			'heading',
 			'principle',
 			'woo_products_tabs',
-			'woo_categories',
 			'newsletter',
             'navigation'
 		];
@@ -174,6 +173,13 @@ class AztElementorPlugin {
 			false,
 			true
 		);
+
+        wp_register_script( 'azt-brands',
+            plugins_url( '/assets/js/brands' . $suffix . '.js', sunio_Elementor_Extra__FILE__ ),
+            [ 'jquery' ],
+            false,
+            true
+        );
 	}
 
 	/**

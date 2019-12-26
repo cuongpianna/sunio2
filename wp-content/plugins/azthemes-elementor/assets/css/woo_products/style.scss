@@ -1,0 +1,49 @@
+.sunio-product-list{
+  display: flex;
+
+  .item{
+    border: 1px solid #dee3e7;
+    padding: 18px 60px;
+
+    .title{
+      margin-bottom: 0;
+      margin-top: 10px;
+      a{
+        font-weight: 500;
+        font-size: 17px;
+      }
+    }
+
+    .price{
+      font-weight: 600;
+
+      font-size: 20px;
+      margin-top: 10px;
+
+      span{
+        color: #212121;
+      }
+    }
+  }
+}
+
+.sunio-product-list.columns-4{
+  flex-wrap: wrap;
+  .item{
+    flex-basis: 25%;
+  }
+}
+
+.sunio-product-list.columns-3{
+  flex-wrap: wrap;
+  .item{
+    flex-basis: 33%;
+  }
+}
+
+.sunio-product-list.columns-5{
+  flex-wrap: wrap;
+  .item{
+    flex-basis: 20%;
+  }
+}

@@ -22,7 +22,9 @@ class Modules_Manager {
 			'principle',
 			'Navigation',
 			'aztsuport',
-			'newsletter'
+			'newsletter',
+            'brands',
+            'image',
 		];
 		if ( is_woocommerce_active() ) {
 			$modules[] = 'woocommerce';

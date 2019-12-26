@@ -1,0 +1,73 @@
+.brand-lists{
+  padding: 15px 10px 10px;
+  background: #f8f6f9;
+
+  .brand-wrap{
+    margin-bottom: 10px;
+    -moz-box-shadow: 4px 4px 2px #c3c3c3;
+    -webkit-box-shadow: 4px 4px 2px #c3c3c3;
+    box-shadow: 4px 2px 2px #c3c3c3;
+
+    &:hover{
+        transition: all ease .5s;
+        transform: scale(0.9);
+      cursor: pointer;
+    }
+  }
+
+  .owl-nav{
+
+    button{
+      &:hover{
+        background-color: #de4a4a !important;
+        opacity: 1;
+        transition: all ease .3s;
+      }
+    }
+
+    .owl-prev{
+      opacity: .4;
+      top: 45%;
+      position: absolute;
+      width: 25px;
+      height: 50px;
+      background-color: #c3c3c3 !important;
+
+      i{
+        color: #ffffff;
+      }
+    }
+
+    .owl-next{
+      opacity: .4;
+      top: 45%;
+      position: absolute;
+      right: 10px;
+      width: 25px;
+      height: 50px;
+      background-color: #c3c3c3 !important;
+
+      i{
+        color: #ffffff;
+      }
+    }
+  }
+
+  .owl-dots{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+
+    button{
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #a9abaa;
+      margin-right: 5px;
+    }
+
+    button.active{
+      background-color: #f36e07;
+    }
+  }
+}
