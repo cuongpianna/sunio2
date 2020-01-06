@@ -185,8 +185,10 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 				remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 				remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 				remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+                remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20);
 				add_action( 'woocommerce_single_product_summary', array( $this, 'single_product_content' ), 10 );
-                add_action('woocommerce_single_product_thumbnailss', array( $this, 'single_product_thumbnails' ), 10 );
+                add_action('woocommerce_single_product_image', array($this, 'single_product_image'), 10);
+                add_action('woocommerce_single_product_thumbnails', array( $this, 'single_product_thumbnails' ), 15 );
 
 				// Add product navigation
 				if ( true == get_theme_mod( 'sunio_woocommerce_display_navigation', true ) ) {
@@ -280,7 +282,7 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 		        }
 
 				// Add new typography settings
-				add_filter( 'sunio_typography_settings', array( $this, 'typography_settings' ) );
+//				add_filter( 'sunio_typography_settings', array( $this, 'typography_settings' ) );
 
 				// WooCommerce Match Box extension single product layout support.
 				add_action( 'woocommerce_match_box_single_product_layout', array( $this, 'remove_wc_match_box_single_product_summary' ), 10 );
@@ -1987,10 +1989,15 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 		}
 
 
+        public static function single_product_image() {
+            if ( function_exists( 'wc_get_template' ) ) {
+                wc_get_template_part( 'sunio/single-product-images' );
+            }
+        }
+
+
         public static function single_product_thumbnails() {
             if ( function_exists( 'wc_get_template' ) ) {
-                var_dump('cuong');
-
                 wc_get_template_part( 'sunio/single-product-thumbnails' );
             }
         }

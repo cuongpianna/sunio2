@@ -29,9 +29,9 @@ global $product;
 $attachment_ids = $product->get_gallery_image_ids();
 
 if ($attachment_ids) { ?>
-    <div class="single-product-thumbnails  <?php if($product->is_type('lambor_car_rental')): echo 'swiper-container'; endif; ?> ">
+    <div class="single-product-thumbnails">
 
-        <div class="<?php if($product->is_type('lambor_car_rental')): echo 'swiper-wrapper'; else: echo 'owl-carousel owl-theme'; endif;  ?>">
+        <div class="owl-carousel owl-theme">
 
             <?php
 
@@ -53,7 +53,7 @@ if ($attachment_ids) { ?>
                 ));
 
                 $image_class = esc_attr(implode(' ', $classes)); ?>
-                <div class="item <?php if($product->is_type('lambor_car_rental')): echo 'swiper-slide'; endif; ?>">
+                <div class="item">
                     <?php
                     echo apply_filters('woocommerce_single_product_image_thumbnail_html', sprintf('<a href="%s" class="%s" title="%s" data-gal="prettyPhoto[gal]">%s</a>', $image_link, $image_class, $image_caption, $image), $attachment_id, get_the_id(), $image_class);
                     ?>

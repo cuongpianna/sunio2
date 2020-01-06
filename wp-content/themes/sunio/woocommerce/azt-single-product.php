@@ -76,7 +76,6 @@ foreach ( $elements as $element ) {
 
         echo '<div class="quantity-button">';
 
-        echo '<div class="quantuty-count">Số lượng</div>';
         woocommerce_template_single_add_to_cart();
 
         echo '</div>';

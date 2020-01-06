@@ -587,49 +587,6 @@ final class sunio_Theme_Class {
 			) );
 		}
 
-		// Footer 1
-		register_sidebar( array(
-			'name'			=> esc_html__( 'Footer 1', 'sunio' ),
-			'id'			=> 'footer-one',
-			'description'	=> esc_html__( 'Widgets in this area are used in the first footer region.', 'sunio' ),
-			'before_widget'	=> '<div id="%1$s" class="footer-widget %2$s clr">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<'. $heading .' class="widget-title">',
-			'after_title'	=> '</'. $heading .'>',
-		) );
-
-		// Footer 2
-		register_sidebar( array(
-			'name'			=> esc_html__( 'Footer 2', 'sunio' ),
-			'id'			=> 'footer-two',
-			'description'	=> esc_html__( 'Widgets in this area are used in the second footer region.', 'sunio' ),
-			'before_widget'	=> '<div id="%1$s" class="footer-widget %2$s clr">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<'. $heading .' class="widget-title">',
-			'after_title'	=> '</'. $heading .'>',
-		) );
-
-		// Footer 3
-		register_sidebar( array(
-			'name'			=> esc_html__( 'Footer 3', 'sunio' ),
-			'id'			=> 'footer-three',
-			'description'	=> esc_html__( 'Widgets in this area are used in the third footer region.', 'sunio' ),
-			'before_widget'	=> '<div id="%1$s" class="footer-widget %2$s clr">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<'. $heading .' class="widget-title">',
-			'after_title'	=> '</'. $heading .'>',
-		) );
-
-		// Footer 4
-		register_sidebar( array(
-			'name'			=> esc_html__( 'Footer 4', 'sunio' ),
-			'id'			=> 'footer-four',
-			'description'	=> esc_html__( 'Widgets in this area are used in the fourth footer region.', 'sunio' ),
-			'before_widget'	=> '<div id="%1$s" class="footer-widget %2$s clr">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<'. $heading .' class="widget-title">',
-			'after_title'	=> '</'. $heading .'>',
-		) );
 
 	}
 
@@ -1179,7 +1136,9 @@ function sunio_mini_cart($atts, $content = null) {
 
 }
 
-function devvn_wc_custom_get_price_html( $price, $product ) {
+
+// display lien he
+function wc_custom_get_price_html( $price, $product ) {
     if ( $product->get_price() == 0 ) {
         if ( $product->is_on_sale() && $product->get_regular_price() ) {
             $regular_price = wc_get_price_to_display( $product, array( 'qty' => 1, 'price' => $product->get_regular_price() ) );
@@ -1191,5 +1150,256 @@ function devvn_wc_custom_get_price_html( $price, $product ) {
     }
     return $price;
 }
-add_filter( 'woocommerce_get_price_html', 'devvn_wc_custom_get_price_html', 10, 2 );
+add_filter( 'woocommerce_get_price_html', 'wc_custom_get_price_html', 10, 2 );
+
+// custom field
+
+add_action( 'woocommerce_product_options_general_product_data', 'woo_add_custom_general_fields' );
+
+// Save Fields
+add_action( 'woocommerce_process_product_meta', 'woo_add_custom_general_fields_save' );
+
+
+function woo_add_custom_general_fields() {
+
+    global $woocommerce, $post;
+
+    echo '<div class="options_group">';
+
+    woocommerce_wp_text_input(
+        array(
+            'id'                => 'min_order',
+            'label'             => __( 'Order tối thiểu', 'woocommerce' ),
+            'placeholder'       => '',
+            'type'              => 'number',
+            'custom_attributes' => array(
+                'step'  => 'any',
+                'min'   => '0'
+            )
+        )
+    );
+
+    woocommerce_wp_text_input(
+        array(
+            'id'          => 'product_unit',
+            'label'       => __( 'Đơn vị', 'woocommerce' ),
+        )
+    );
+
+    echo '</div>';
+
+}
+
+function woo_add_custom_general_fields_save( $post_id ){
+    $min_order = $_POST['min_order'];
+    if( !empty( $min_order ) ) {
+        update_post_meta($post_id, 'min_order', esc_attr($min_order));
+    }
+
+    $p_unit = $_POST['product_unit'];
+    if( !empty( $p_unit ) ) {
+        update_post_meta($post_id, 'product_unit', esc_attr($p_unit));
+    }
+}
+
+// validate add to cart
+
+
+function filter_woocommerce_add_to_cart_validation( $passed, $product_id, $quantity ) {
+    $min_order = get_post_meta($product_id, 'min_order', true);
+
+    if ( $quantity < $min_order ) {
+        echo wc_add_notice(sprintf(esc_html__('Số hàng tối thiểu là: %d', 'lambor'), $min_order), 'error');
+        $passed = false;
+    }
+    return $passed;
+};
+
+// add the filter
+add_filter( 'woocommerce_add_to_cart_validation', 'filter_woocommerce_add_to_cart_validation', 10, 3 );
+
+
+function rc_woocommerce_recently_viewed_products( $atts, $content = null ) {
+
+    // Get shortcode parameters
+    extract(shortcode_atts(array(
+        "per_page" => '5'
+    ), $atts));
+
+    // Get WooCommerce Global
+    global $woocommerce;
+
+    // Get recently viewed product cookies data
+    $viewed_products = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', $_COOKIE['woocommerce_recently_viewed'] ) : array();
+    $viewed_products = array_filter( array_map( 'absint', $viewed_products ) );
+
+    // If no data, quit
+    if ( empty( $viewed_products ) )
+        return __( 'You have not viewed any product yet!', 'rc_wc_rvp' );
+
+    // Create the object
+    ob_start();
+
+    // Get products per page
+    if( !isset( $per_page ) ? $number = 5 : $number = $per_page )
+
+        // Create query arguments array
+        $query_args = array(
+            'posts_per_page' => $number,
+            'no_found_rows'  => 1,
+            'post_status'    => 'publish',
+            'post_type'      => 'product',
+            'post__in'       => $viewed_products,
+            'orderby'        => 'rand'
+        );
+
+    // Add meta_query to query args
+    $query_args['meta_query'] = array();
+
+    // Check products stock status
+    $query_args['meta_query'][] = $woocommerce->query->stock_status_meta_query();
+
+    // Create a new query
+    $r = new WP_Query($query_args);
+
+    // If query return results
+    if ( $r->have_posts() ) {
+
+        $content = '<div class="recent-products-wrap">';
+
+        $content .= '<div class="title"><div class="line"></div><span style="color: #ef2756; font-size: 16px; font-weight: 600">SẢN PHẨM</span> <span style="color: #4d5b5b; font-size: 16px; font-weight: 600">VỪA XEM</span><div class="line"></div></div>';
+
+        $content .= '<ul class="rc_wc_rvp_product_list_widget">';
+
+        // Start the loop
+        while ( $r->have_posts()) {
+            $r->the_post();
+            global $product;
+
+            $content .= '<li class="item">
+				<a href="' . get_permalink() . '">
+					' . ( has_post_thumbnail() ? get_the_post_thumbnail( $r->post->ID, 'shop_thumbnail' ) : wc_placeholder_img ( 'shop_thumbnail' ) ) . ' 
+				</a> ' . '<div class="content"><a href="'.get_permalink().'">'. get_the_title() .'</a>' . $product->get_price_html() . '
+			</div></li>';
+        }
+
+        $content .= '</ul></div>';
+
+
+    }
+
+    // Get clean object
+    $content .= ob_get_clean();
+
+    // Return whole content
+    return $content;
+}
+
+// Register the shortcode
+add_shortcode("woocommerce_recently_viewed_products", "rc_woocommerce_recently_viewed_products");
+
+function update_woocommerce_version() {
+    if(class_exists('WooCommerce')) {
+        global $woocommerce;
+
+        if(version_compare(get_option('woocommerce_db_version', null), $woocommerce->version, '!=')) {
+            update_option('woocommerce_db_version', $woocommerce->version);
+
+            if(! wc_update_product_lookup_tables_is_running()) {
+                wc_update_product_lookup_tables();
+            }
+        }
+    }
+}
+add_action('init', 'update_woocommerce_version');
+
+
+add_filter('woocommerce_billing_fields', 'wpb_custom_billing_fields');
+// remove some fields from billing form
+// ref - https://docs.woothemes.com/document/tutorial-customising-checkout-fields-using-actions-and-filters/
+function wpb_custom_billing_fields($fields = array())
+{
+    unset($fields['billing_company']);
+    unset($fields['billing_first_name']);
+    unset($fields['billing_last_name']);
+    unset($fields['billing_address_1']);
+    unset($fields['billing_address_2']);
+    unset($fields['billing_city']);
+    unset($fields['billing_address_2']);
+    unset($fields['billing_state']);
+    unset($fields['billing_phone']);
+    unset($fields['billing_country']);
+    unset($fields['billing_postcode']);
+    unset($fields['billing_email']);
+
+    return $fields;
+}
+
+
+add_filter('woocommerce_billing_fields', 'custom_woocommerce_billing_fields');
+
+function custom_woocommerce_billing_fields($fields)
+{
+
+    $fields['billing_name'] = array(
+        'label' => __('Họ và tên', 'woocommerce'), // Add custom field label
+        'placeholder' => _x('Nhập họ và tên của bạn..', 'placeholder', 'woocommerce'), // Add custom field placeholder
+        'required' => true, // if field is required or not
+        'type' => 'text', // add field type
+        'class' => array('')    // add class name
+    );
+
+    $fields['bill_hotel_name'] = array(
+        'label' => __('Số phòng', 'woocommerce'), // Add custom field label
+        'placeholder' => _x('Nhập tên khách sạn của bạn..', 'placeholder', 'woocommerce'), // Add custom field placeholder
+        'required' => true, // if field is required or not
+        'type' => 'text', // add field type
+        'class' => array('c')    // add class name
+    );
+
+    $fields['billing_email'] = array(
+        'label' => __('Email', 'woocommerce'), // Add custom field label
+        'placeholder' => _x('Nhập email của bạn..', 'placeholder', 'woocommerce'), // Add custom field placeholder
+        'required' => true, // if field is required or not
+        'type' => 'text', // add field type
+        'class' => array('')    // add class name
+    );
+
+    $fields['billing_address'] = array(
+        'label' => __('Địa chỉ khách sạn', 'woocommerce'), // Add custom field label
+        'placeholder' => _x('Nhập địa chỉ khách sạn của bạn..', 'placeholder', 'woocommerce'), // Add custom field placeholder
+        'required' => true, // if field is required or not
+        'type' => 'text', // add field type
+        'class' => array('')    // add class name
+    );
+
+    $fields['billing_phone'] = array(
+        'label' => __('Số điên thoại:', 'woocommerce'), // Add custom field label
+        'placeholder' => _x('Nhập số điện thoại...', 'placeholder', 'woocommerce'), // Add custom field placeholder
+        'required' => true, // if field is required or not
+        'type' => 'text', // add field type
+        'class' => array('')    // add class name
+    );
+
+    $fields['billing_room'] = array(
+        'label' => __('Số phòng', 'woocommerce'), // Add custom field label
+        'placeholder' => _x('Nhập số lượng phòng khách sạn của bạn...', 'placeholder', 'woocommerce'), // Add custom field placeholder
+        'required' => true, // if field is required or not
+        'clear' => false, // add clear or not
+        'type' => 'text', // add field type
+        'class' => array('')    // add class name
+    );
+
+    return $fields;
+}
+
+
+function md_custom_woocommerce_checkout_fields( $fields )
+{
+    $fields['order']['order_comments']['placeholder'] = 'Ghi chú về đơn hàng của bạn';
+    $fields['order']['order_comments']['label'] = '';
+
+    return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'md_custom_woocommerce_checkout_fields' );
 

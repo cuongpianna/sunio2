@@ -212,3 +212,166 @@ div.star-rating{
   }
 }
 
+
+.single-product-thumbnails{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  position: relative;
+
+  .item{
+
+  }
+
+  .owl-nav{
+    button{
+      position: absolute;
+      top: 6%;
+      line-height: 1;
+
+      span{
+        font-size: 25px;
+      }
+    }
+
+    button.owl-next{
+      right: -13px;
+    }
+
+    button.owl-prev{
+      left: -13px;
+    }
+  }
+}
+
+
+form.cart{
+  margin-left: 0 !important;
+  .quantity-wrap{
+    display: flex !important;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    label{
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .quantity.buttons_added{
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  .single_add_to_cart_button{
+    margin-top: 40px;
+    border-radius: 5px;
+    text-transform: unset !important;
+    background: #e8690c;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 18px 21px;
+  }
+}
+
+.min-order{
+  font-size: 13px;
+  color: #d30722;
+}
+
+.form-submit .submit{
+  background: #e8690c;
+}
+
+.recent-products-wrap{
+  margin-top: 20px;
+  .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .line{
+      width: 40px;
+      background: #f0f0f0;
+      height: 3px;
+    }
+  }
+
+  .rc_wc_rvp_product_list_widget{
+    margin-top: 5px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    padding: 15px 10px;
+
+    .item{
+      display: flex;
+      align-items: center;
+
+      a{
+        display: block;
+        font-size: 15px;
+      }
+
+      .woocommerce-Price-amount{
+        color: #ef2756 !important;
+        font-size: 15px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents{
+  button{
+    border-radius: 3px;
+    background: #de4a4a;
+  }
+}
+
+a.checkout-button{
+  border-radius: 3px;
+  background: #de4a4a;
+}
+
+.woocommerce-billing-fields__field-wrapper{
+  p{
+    span.woocommerce-input-wrapper{
+      width: 100%;
+
+      input{
+        background: #ffffff;
+      }
+    }
+  }
+}
+
+.woocommerce .woocommerce-checkout #customer_details{
+  background: #f5f5f5;
+  padding: 65px 50px;
+
+  label{
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+  }
+
+  h3{
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-bottom: none !important;
+    display: flex !important;
+    padding: 0;
+    padding-left: 10px;
+    align-items: center !important;
+    text-transform: none;
+
+    &:first-child{
+      border-left: 2px solid black;
+    }
+  }
+}
+
+.woocommerce-input-wrapper{
+  width: 100%;
+  background: #ffffff;
+}

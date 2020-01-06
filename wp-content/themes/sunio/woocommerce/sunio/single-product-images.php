@@ -11,53 +11,42 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.3.2
+ * @version 3.5.1
  */
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
 // Note: `wc_get_gallery_image_html` was added in WC 3.3.2 and did not exist prior. This check protects against theme overrides being used on older versions of WC.
-if (!function_exists('wc_get_gallery_image_html')) {
+if ( ! function_exists( 'wc_get_gallery_image_html' ) ) {
     return;
 }
 
 global $product;
 
-$columns = apply_filters('woocommerce_product_thumbnails_columns', 4);
+$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
 $post_thumbnail_id = $product->get_image_id();
-$wrapper_classes = apply_filters('woocommerce_single_product_image_gallery_classes', array(
-    'woocommerce-single-product-gallery',
-    'woocommerce-single-product-gallery--' . (has_post_thumbnail() ? 'with-images' : 'without-images'),
-    'woocommerce-single-product-gallery--columns-' . absint($columns),
+$wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_classes', array(
+    'woocommerce-product-gallery',
+    'woocommerce-product-gallery--' . ( $product->get_image_id() ? 'with-images' : 'without-images' ),
+    'woocommerce-product-gallery--columns-' . absint( $columns ),
     'images',
-));
-
-$attachment_ids = $product->get_gallery_image_ids();
-if(!$attachment_ids){
-    $add_class = 'border';
-}else{
-    $add_class = '';
-}
-
+) );
 ?>
-<div class="<?php echo esc_attr(implode(' ', array_map('sanitize_html_class', $wrapper_classes))); ?>"
-     data-columns="<?php echo esc_attr($columns); ?>" style="opacity: 1; transition: opacity .25s ease-in-out;">
-    <?php do_action('woocommerce_single_product_thumbnailss'); ?>
-
-    <figure class="woocommerce-product-gallery__wrapper <?php echo $add_class?>">
+<div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
+    <figure class="woocommerce-product-gallery__wrapper">
         <?php
-        if (has_post_thumbnail()) {
-            $img_url = wp_get_attachment_image_url($post_thumbnail_id, 'lambor_m');
-            $image_title = esc_attr(get_the_title($post_thumbnail_id));
-            $html = '<a href="' . esc_url($img_url) . '" data-gal="prettyPhoto[gal]"><img src="' . esc_url($img_url) . '" alt="' . esc_attr($image_title) . '"></a>';
+        if ( $product->get_image_id() ) {
+            $html = wc_get_gallery_image_html( $post_thumbnail_id, true );
         } else {
-            $html = '<div class="woocommerce-product-gallery__image--placeholder">';
-            $html .= sprintf('<img src="%s" alt="%s" class="wp-post-image"  />', esc_url(wc_placeholder_img_src()), esc_html__('Awaiting product image', 'lambor'));
+            $html  = '<div class="woocommerce-product-gallery__image--placeholder">';
+            $html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
             $html .= '</div>';
         }
+
+        echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
+
+        do_action( 'woocommerce_single_product_thumbnails' );
         ?>
     </figure>
-
 </div>
