@@ -4,7 +4,7 @@ $price = $product->get_regular_price();
 ?>
 
 <span class="price-heading">
-  <?php esc_html_e('Price:', 'sunio'); ?>
+  <?php esc_html_e('Giá:', 'sunio'); ?>
 </span>
 <span class="price-value">
  <?php if($price): esc_html_e($price, 'sunio'); ?>

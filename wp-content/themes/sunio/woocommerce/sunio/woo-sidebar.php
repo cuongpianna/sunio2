@@ -62,7 +62,7 @@ $other_single_cates = get_categories($args);
                     <?php if ($cat->category_parent == 0): $category_id = $cat->term_id; ?>
                         <?php
                         $args2 = array(
-                            'taxonomy' => $taxonomy,
+                            'taxonomy' => 'product_cat',
                             'child_of' => 0,
                             'parent' => $category_id,
                             'hierarchical' => 1,
@@ -115,7 +115,7 @@ $other_single_cates = get_categories($args);
                     <?php if ($cat->category_parent == 0): $category_id = $cat->term_id; ?>
                         <?php
                         $args2 = array(
-                            'taxonomy' => $taxonomy,
+                            'taxonomy' => 'product_cat',
                             'child_of' => 0,
                             'parent' => $category_id,
                             'hierarchical' => 1,
@@ -153,5 +153,7 @@ $other_single_cates = get_categories($args);
                 <?php endforeach; ?>
             </ul>
         </div>
+
+        <?php echo do_shortcode('[woocommerce_recently_viewed_products]'); ?>
     </div>
 <?php endif; ?>
