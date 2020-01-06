@@ -245,6 +245,9 @@ if ( ! class_exists( 'sunio_WooCommerce_Config' ) ) {
 				add_filter( 'osh_header_sticky_logo', array( $this, 'distraction_free' ), 11 );
 				add_filter( 'ofc_display_footer_callout', array( $this, 'distraction_free' ), 11 );
 
+                remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
+
+
 				// Multi-step checkout
 				if ( true == get_theme_mod( 'sunio_woo_multi_step_checkout', false ) ) {
 

@@ -5192,6 +5192,132 @@ Woo Responsive
   border: 1px solid #d7d7d7;
 }
 
+.cart-form-wrap {
+  margin-top: 80px;
+}
+
+.cart-form-wrap .cart-inner .woocommerce-cart-form__cart-item {
+  display: flex;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid #c5c5c5;
+}
+
+.cart-form-wrap .cart-inner .woocommerce-cart-form__cart-item .left {
+  display: flex;
+  flex-basis: 70%;
+}
+
+.cart-form-wrap .cart-inner .woocommerce-cart-form__cart-item .left img {
+  width: 120px;
+  border: 1px solid #c5c5c5;
+}
+
+.cart-form-wrap .cart-inner .woocommerce-cart-form__cart-item .left .cart-content {
+  margin-left: 30px;
+}
+
+.cart-form-wrap .cart-inner .woocommerce-cart-form__cart-item .left .cart-content > a {
+  font-size: 20px;
+}
+
+.cart-form-wrap .cart-inner .woocommerce-cart-form__cart-item .left .cart-content > a:hover {
+  color: #de4a4a;
+}
+
+.cart-form-wrap .cart-inner .woocommerce-cart-form__cart-item .left .cart-content .cart-price {
+  color: #212121;
+  font-size: 14px;
+}
+
+.cart-form-wrap .cart-inner .woocommerce-cart-form__cart-item .left .cart-content .cart-remove {
+  margin-top: 10px;
+}
+
+.cart-form-wrap .cart-inner .woocommerce-cart-form__cart-item .left .cart-content .cart-remove a:hover {
+  color: #de4a4a;
+}
+
+.cart-form-wrap .cart-inner .product-quantity label {
+  font-size: 15px;
+  color: #212121;
+}
+
+.cart-form-wrap .cart-inner .product-quantity .quantity {
+  float: none;
+}
+
+.cart-form-wrap .cart-inner .product-quantity .quantity input {
+  max-width: 100px;
+  width: 100px;
+  padding-left: 30px;
+}
+
+.cart-form-wrap .cart-inner .cart-action {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.cart-form-wrap .cart-inner .cart-action .home-back {
+  background: #ee7c24;
+  padding: 8px 15px;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 2px;
+  letter-spacing: 1px;
+}
+
+.cart-form-wrap .cart-inner .cart-action .home-back:hover {
+  background: #de4a4a;
+}
+
+.cart-form-wrap .cart-inner .cart-action button {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: unset;
+  margin-left: 15px;
+  background: #ee7c24;
+  padding: 8px 19px;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.cart-form-wrap .cart-inner .cart-action button:hover {
+  background: #de4a4a;
+}
+
+.woocommerce-checkout form.checkout {
+  margin-top: 50px;
+}
+
+.sunio-breadcumbs {
+  border-bottom: 2px solid #eee;
+  margin-bottom: 25px;
+}
+
+.sunio-breadcumbs .pad {
+  display: table;
+  border-bottom: 2px solid #ed3237;
+  position: relative;
+  bottom: -2px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.sunio-breadcumbs .color {
+  color: #ed3237;
+}
+
+#top-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /*------------------------------------------------------------------
 Woo Archives
 -------------------------------------------------------------------*/

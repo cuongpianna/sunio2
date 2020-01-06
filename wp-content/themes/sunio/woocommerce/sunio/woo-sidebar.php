@@ -1,7 +1,11 @@
 <?php
 
 $current_cate = get_queried_object();
-$current_cate_id = $current_cate->term_id;
+if(is_tax()){
+    $current_cate_id = $current_cate->term_id;
+}else{
+    $current_cate_id =0 ;
+}
 
 $arg = array('hierarchical' => 1,
     'show_option_none' => '',
@@ -39,9 +43,11 @@ $other_single_cates = get_categories($args);
         </div>
 
         <div class="woo-sidebar-body">
+            <?php if(!is_shop()): ?>
             <p class="woo-sidebar-current-title">
                 <?php echo single_cat_title(); ?>
             </p>
+            <?php endif; ?>
 
             <?php if ($sub_current_cates): ?>
                 <ul class="current-cat">

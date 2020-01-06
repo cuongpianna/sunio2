@@ -396,7 +396,7 @@ final class sunio_Theme_Class {
 
         wp_enqueue_style( 'owl', $dir .'third/owl.carousel.min.css', false, '' );
 
-        wp_enqueue_style( 'owl-default', $dir .'third/owl.carousel.default.min.css', false, '' );
+        wp_enqueue_style( 'owl-default', $dir .'third/owl.theme.default.min.css', false, '' );
 
 		// Main Style.css File
 		wp_enqueue_style( 'sunio-style', $dir .'style.min.css', false, $theme_version );
@@ -1235,7 +1235,7 @@ function rc_woocommerce_recently_viewed_products( $atts, $content = null ) {
 
     // If no data, quit
     if ( empty( $viewed_products ) )
-        return __( 'You have not viewed any product yet!', 'rc_wc_rvp' );
+        return __( '' );
 
     // Create the object
     ob_start();

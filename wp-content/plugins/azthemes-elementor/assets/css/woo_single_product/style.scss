@@ -1,0 +1,79 @@
+/*************** Woo Single Product **************/
+
+.sunio-single-product > .sunio-single-product{
+
+}
+
+.sunio-single-product{
+
+  .item.sunio-item{
+    padding: 30px 120px;
+    display: flex;
+
+    .avatar-wrap{
+      flex-basis: 28%;
+      margin-right: 25px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+
+    .content-wrap{
+      flex-basis: 72%;
+
+      h3{
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 40px;
+        color: #212121;
+      }
+
+      .price-wrap{
+        .price-value{
+          font-size: 27px;
+          font-weight: 600;
+          span{
+            color: #fe7620;
+          }
+
+        }
+
+        .unit{
+          font-size: 16px;
+        }
+      }
+
+      .min-order-wrap{
+        .min-order{
+          font-size: 22px;
+          color: #212121;
+          font-weight: 600;
+        }
+
+        .unit{
+          font-size: 16px;
+        }
+      }
+
+      a.product-link{
+        display: inline-block;
+        line-height: 1;
+        font-size: 16px;
+        color: #c5c5c5;
+        border: 1px solid #c5c5c5;
+        padding: 9px 22px;
+        border-radius: 22px;
+        margin-top: 35px;
+        transition: all .5s;
+
+        &:hover{
+          border-color: #fe7620;
+          color: #fe7620;
+        }
+      }
+
+      .product-thumnails{
+        margin-top: 25px;
+        width: 300px;
+      }
+    }
+  }
+}

@@ -2207,6 +2207,24 @@ a.pure-button-selected {
   top: 0;
 }
 
+#top-bar-content {
+  background: #f1f1f1;
+}
+
+#top-bar-content .topbar-content .topbar-hotline-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+#top-bar-content .topbar-content .topbar-hotline-heading {
+  font-size: 14px;
+}
+
+#top-bar-content .topbar-right {
+  margin-right: 40px;
+}
+
 /*------------------------------------*
 	Phone Portrait and Landscape
 *------------------------------------*/
@@ -2218,6 +2236,25 @@ a.pure-button-selected {
     float: none;
     text-align: center;
   }
+}
+
+.sidr-inner ul {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  margin-top: 20px !important;
+}
+
+.sidr-inner ul li a {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.sidr-inner ul li a:hover {
+  color: #de4a4a;
+}
+
+a.topbar-right:hover {
+  color: #de4a4a !important;
 }
 
 /**

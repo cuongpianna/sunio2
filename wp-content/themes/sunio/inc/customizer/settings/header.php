@@ -3501,7 +3501,7 @@ if ( ! class_exists( 'sunio_Header_Customizer' ) ) :
 			 * Close Menu Text
 			 */
 			$wp_customize->add_setting( 'sunio_mobile_menu_close_text', array(
-				'default'           	=> esc_html__( 'Close', 'sunio' ),
+				'default'           	=> esc_html__( 'Đóng menu', 'sunio' ),
 				'transport'           	=> 'postMessage',
 				'sanitize_callback' 	=> 'wp_kses_post',
 			) );

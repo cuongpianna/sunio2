@@ -122,3 +122,45 @@
   margin-left: -50vw;
   left: 50%;
 }
+
+@media only screen and (max-width: 768px) {
+
+  #top-bar {
+
+    > div:nth-child(2) {
+      padding-top: 20px;
+    }
+  }
+
+  .top-bar-right {
+    float: none;
+    text-align: center;
+  }
+
+  .custom_header-top{
+    .custom_header-search{
+      display: none;
+    }
+    .custom_header_cart.container{
+      display: none;
+    }
+  }
+
+  .custom_header-top{
+    justify-content: space-between;
+  }
+
+  .sunio-mobile-menu-icon.mobile-right{
+    display: flex !important;
+  }
+
+  .sunio-fluid.custom_header_fluid{
+    display: none;
+  }
+
+  #top-bar-wrap{
+    display: none;
+  }
+
+}
+

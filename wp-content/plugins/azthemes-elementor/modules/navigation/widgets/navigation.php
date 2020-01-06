@@ -448,7 +448,7 @@ class Navigation extends Widget_Base {
 
             </div>
             <div class="sunio-fluid custom_header_fluid">
-                <div class="custom_header-bottom container">
+                <div id="site-navigation" class="custom_header-bottom container">
                     <?php
                     wp_nav_menu(array(
                         'menu' => $settings['menu_slug'],

@@ -34,12 +34,12 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 	// Get menu text
 	$text = get_theme_mod( 'sunio_mobile_menu_text' );
 	$text = sunio_tm_translation( 'sunio_mobile_menu_text', $text );
-	$text = $text ? $text: esc_html__( 'Menu', 'sunio' );
+//	$text = $text ? $text: esc_html__( 'Menu', 'sunio' );
 
 	// Get close menu text
 	$close_text = get_theme_mod( 'sunio_mobile_menu_close_text' );
 	$close_text = sunio_tm_translation( 'sunio_mobile_menu_close_text', $close_text );
-	$close_text = $close_text ? $close_text: esc_html__( 'Close', 'sunio' );
+//	$close_text = $close_text ? $close_text: esc_html__( 'Close', 'sunio' );
 
 	if ( sunio_WOOCOMMERCE_ACTIVE ) {
 

@@ -52,7 +52,7 @@ class AztElementorPlugin {
 			'principle',
 			'woo_products_tabs',
 			'newsletter',
-            'navigation'
+            'navigation',
 		];
 	}
 
@@ -106,7 +106,7 @@ class AztElementorPlugin {
 
 	/**
 	 * Plugin instance
-	 * 
+	 *
 	 * @since 1.0.0
 	 * @return Plugin
 	 */
@@ -174,8 +174,15 @@ class AztElementorPlugin {
 			true
 		);
 
-        wp_register_script( 'azt-brands',
+        wp_register_script( 'azt-brand',
             plugins_url( '/assets/js/brands' . $suffix . '.js', sunio_Elementor_Extra__FILE__ ),
+            [ 'jquery' ],
+            false,
+            true
+        );
+
+        wp_register_script( 'azt-woo_single_product',
+            plugins_url( '/assets/js/woo_single_product' . $suffix . '.js', sunio_Elementor_Extra__FILE__ ),
             [ 'jquery' ],
             false,
             true
@@ -215,9 +222,6 @@ class AztElementorPlugin {
 			wp_enqueue_style( 'azt-'. $module_name .'' );
 		}
 
-		// Fix the Woo Slider issue in the preview
-		// $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		// wp_enqueue_style( 'azt-elementor-preview', plugins_url( '/assets/css/elementor/preview' . $suffix . '.css', sunio_Elementor_Extra__FILE__ ) );
 	}
 
 	/**

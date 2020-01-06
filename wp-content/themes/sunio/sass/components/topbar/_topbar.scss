@@ -64,6 +64,24 @@
 	}
 }
 
+#top-bar-content{
+	background: #f1f1f1;
+
+	.topbar-content .topbar-hotline-value{
+		font-size: 14px;
+		font-weight: 600;
+		color: #333333;
+	}
+
+	.topbar-content .topbar-hotline-heading{
+		font-size: 14px;
+	}
+
+	.topbar-right{
+		margin-right: 40px;
+	}
+}
+
 /*------------------------------------*
 	Phone Portrait and Landscape
 *------------------------------------*/
@@ -81,4 +99,30 @@
 		text-align: center;
 	}
 
+
+}
+
+.sidr-inner{
+	ul{
+		margin-left: 20px !important;
+		margin-right: 20px !important;
+		margin-top: 20px !important;
+
+		li{
+			a{
+				font-size: 16px;
+				font-weight: 600;
+
+				&:hover{
+					color: #de4a4a;
+				}
+			}
+		}
+	}
+}
+
+a.topbar-right{
+	&:hover{
+		color: #de4a4a !important;
+	}
 }

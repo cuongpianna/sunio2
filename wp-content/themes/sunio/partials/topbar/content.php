@@ -44,5 +44,7 @@ $content = sunio_tm_translation('sunio_top_bar_content', $content);
             <?php endif; ?>
 
         </span>
+
+        <a class="topbar-right" href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>">Đăng nhập |  Đăng ký</a>
     </div>
 <?php endif; ?>

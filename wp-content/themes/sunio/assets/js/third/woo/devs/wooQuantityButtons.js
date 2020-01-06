@@ -4,6 +4,7 @@ $j( window ).on( 'load', function() {
 	"use strict";
 	// Woo quantity buttons
 	sunioWooQuantityButtons();
+
 } );
 
 $j( document ).ajaxComplete( function() {

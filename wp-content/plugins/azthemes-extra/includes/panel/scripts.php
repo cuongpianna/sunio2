@@ -825,7 +825,7 @@ class sunio_Extra_Scripts_Panel {
 
 		    	// Load wooQuantityButtons js
 		    	if ( $wooQuantityButtons ) {
-					$aFiles[] = $tDir .'third/woo/devs/wooQuantityButtons.js';
+//					$aFiles[] = $tDir .'third/woo/devs/wooQuantityButtons.js';
 				}
 
 		    	// Load wooReviewsScroll js
