@@ -62,7 +62,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		// Social Share
 		if ( 'social_share' == $element
-			&& OCEAN_EXTRA_ACTIVE ) {
+			 ) {
 
 			do_action( 'sunio_social_share' );
 

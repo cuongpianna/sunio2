@@ -15,18 +15,6 @@ if ( ! has_post_thumbnail() ) {
 	return;
 }
 
-// LLMS Integration
-if( sunio_LIFTERLMS_ACTIVE ) {
-	$details = get_theme_mod( 'sunio_llms_course_details', array( 'image', 'description', 'meta', 'author', 'progress', 'syllabus' ) );
-
-	if( is_course() && !in_array( 'image', $details) ) {
-		return;
-	}
-
-	if( is_membership() && !( get_theme_mod( 'sunio_llms_membership_image', false ) ) ) {
-		return;
-	}
-}
 
 // Image args
 $img_args = array(

@@ -10,10 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Return if Ocean Extra is not active
-if ( ! OCEAN_EXTRA_ACTIVE ) {
-	return;
-}
 
 // Get attachments
 $attachments = sunio_get_gallery_ids( get_the_ID() );
@@ -51,20 +47,6 @@ if ( 'grid-entry' == sunio_blog_entry_style() ) {
 	    	// Images url
 			$img_url 	= wp_get_attachment_image_src( $attachment, 'full', true );
 
-			if ( OCEAN_EXTRA_ACTIVE
-				&& function_exists( 'sunio_extra_image_attributes' ) ) {
-				$img_atts = sunio_extra_image_attributes( $img_url[1], $img_url[2], $img_width, $img_height );
-			}
-
-			// If Ocean Extra is active and has a custom size
-			if ( OCEAN_EXTRA_ACTIVE
-				&& function_exists( 'sunio_extra_resize' )
-				&& ! empty( $img_atts ) ) {
-
-				$attachment_html = '<img src="'. sunio_extra_resize( $img_url[0], $img_atts[ 'width' ], $img_atts[ 'height' ], $img_atts[ 'crop' ], true, $img_atts[ 'upscale' ] ) .'" alt="'. $attachment_alt .'" width="'. $img_width .'" height="'. $img_height .'" itemprop="image" />';
-
-
-			} else {
 
 				// Image args
 				$img_args = array(
@@ -77,7 +59,6 @@ if ( 'grid-entry' == sunio_blog_entry_style() ) {
 				// Get image output
 				$attachment_html = wp_get_attachment_image( $attachment, $size, '', $img_args );
 
-			}
 
 			// Display with lightbox
 			if ( sunio_gallery_is_lightbox_enabled() == 'on' ) { ?>

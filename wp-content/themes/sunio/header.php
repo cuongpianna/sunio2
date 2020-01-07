@@ -6,6 +6,8 @@
  */
     if(is_tax()){
         $bg_class = 'tax-page';
+    }else{
+        $bg_class = '';
     }
 
 ?>
