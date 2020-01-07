@@ -29,3 +29,15 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .woo-cateogires{
+    .item{
+      flex-basis: 50%;
+
+      &:nth-child(2n){
+        border: none !important;
+      }
+    }
+  }
+}

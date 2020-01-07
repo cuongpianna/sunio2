@@ -29,6 +29,7 @@
   width: 25px;
   height: 50px;
   background-color: #c3c3c3 !important;
+  left: 10px;
 }
 
 .brand-lists .owl-nav .owl-prev i {
@@ -49,22 +50,8 @@
   color: #ffffff;
 }
 
-.brand-lists .owl-dots {
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-}
-
-.brand-lists .owl-dots button {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #a9abaa;
-  margin-right: 5px;
-}
-
-.brand-lists .owl-dots button.active {
-  background-color: #f36e07;
+.brand-lists .owl-dots button.active span {
+  background: #f36e07 !important;
 }
 
 /*------------------------------------*
@@ -250,17 +237,28 @@
 
 .sunio-product-list .item .title a {
   font-weight: 500;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .sunio-product-list .item .price {
   font-weight: 600;
-  font-size: 20px;
+  line-height: 1;
+  font-size: 18px;
   margin-top: 10px;
 }
 
 .sunio-product-list .item .price span {
   color: #212121;
+}
+
+.sunio-product-list .item .min-order-wrap {
+  margin-top: 3px;
+}
+
+.sunio-product-list .item .min-order-wrap .min-order {
+  font-weight: 600;
+  color: #212121;
+  font-size: 15px;
 }
 
 .sunio-product-list.columns-4 {
@@ -285,6 +283,12 @@
 
 .sunio-product-list.columns-5 .item {
   flex-basis: 20%;
+}
+
+@media screen and (max-width: 480px) {
+  .sunio-product-list {
+    display: unset;
+  }
 }
 
 .sunio-image-box-wrapper .sunio-image-box-content .sunio-image-box-title {
@@ -336,6 +340,15 @@
 
 .woo-cateogires .item .image {
   border: 1px solid #e4e4e4;
+}
+
+@media screen and (max-width: 480px) {
+  .woo-cateogires .item {
+    flex-basis: 50%;
+  }
+  .woo-cateogires .item:nth-child(2n) {
+    border: none !important;
+  }
 }
 
 /*************** Woo Single Product **************/
@@ -404,6 +417,200 @@
 .sunio-single-product .item.sunio-item .content-wrap .product-thumnails {
   margin-top: 25px;
   width: 300px;
+}
+
+.sunio-single-product .owl-nav button {
+  position: absolute;
+  top: 50%;
+  margin: 0 !important;
+}
+
+.sunio-single-product .owl-nav button:hover {
+  background: none !important;
+}
+
+.sunio-single-product .owl-nav button:hover i {
+  color: #de4a4a !important;
+}
+
+.sunio-single-product .owl-nav button i {
+  font-size: 25px;
+}
+
+.sunio-single-product .owl-nav .owl-prev {
+  left: 70px;
+}
+
+.sunio-single-product .owl-nav .owl-next {
+  right: 70px;
+}
+
+.sunio-single-product .product-thumnails .owl-dots button span {
+  width: 8px;
+  height: 8px;
+}
+
+.sunio-single-product .product-thumnails .owl-dots button.active span {
+  background: #fd7306 !important;
+}
+
+@media screen and (max-width: 480px) {
+  .sunio-single-product .item.sunio-item {
+    padding: 30px 10px;
+  }
+  .avatar-wrap {
+    display: none;
+  }
+}
+
+/************* HEADING 2 *****************/
+.sunio-heading2 {
+  border-left: 3px solid #da6264;
+  padding: 5px 13px;
+}
+
+.sunio-heading2 .title {
+  line-height: 1;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #4f5054;
+}
+
+.sunio-heading2 .under {
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-top: 15px;
+}
+
+.sunio-heading2 .under .left {
+  color: #4f5054;
+}
+
+.sunio-heading2 .under .right {
+  color: #da6264;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide {
+  position: relative;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-image {
+  position: relative;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-image .over-lay {
+  position: absolute;
+  background: black;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-image:hover {
+  cursor: pointer;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-image:hover .over-lay {
+  opacity: .6;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-content .post-title {
+  margin-top: 10px;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-content .post-title h2 {
+  margin-bottom: 8px;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-content .post-title a {
+  font-weight: 500;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-content .post-title a:hover {
+  color: #de4a4a;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-content .post-excerpt p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-content .more {
+  text-transform: uppercase;
+  font-size: 15px;
+  color: #de4a4a;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-content .more i {
+  transition: all .5s;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .sunio-elementor-blog-item .blog-slide-content .more:hover i {
+  margin-left: 15px;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .owl-nav {
+  position: absolute;
+  right: 0;
+  top: -80px;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .owl-nav button {
+  margin: 0;
+  width: 22px;
+  height: 22px;
+  background: #de4a4a;
+  color: #FFFFFF;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .owl-nav button:hover {
+  background: #de4a4a;
+}
+
+.sunio-blog-slider-wrapper.sunio-blog-slide .owl-nav button:first-child {
+  margin-right: 6px;
+}
+
+.sunio-hotline {
+  font-weight: 500;
+  font-size: 19px;
+  display: flex;
+}
+
+.sunio-hotline .left {
+  padding: 4px 37px;
+  background: #df4b4b;
+  position: relative;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+}
+
+.sunio-hotline .left i {
+  margin-right: 12px;
+}
+
+.sunio-hotline .left:after {
+  padding-left: 4px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 24px 0 18px 20px;
+  border-color: transparent transparent transparent #df4b4b;
+  position: absolute;
+  right: -24px;
+  top: 0;
+}
+
+.sunio-hotline .right {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */

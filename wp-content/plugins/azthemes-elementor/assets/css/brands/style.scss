@@ -32,6 +32,7 @@
       width: 25px;
       height: 50px;
       background-color: #c3c3c3 !important;
+      left: 10px;
 
       i{
         color: #ffffff;
@@ -54,20 +55,12 @@
   }
 
   .owl-dots{
-    position: absolute;
-    left: 50%;
-    bottom: 20px;
 
-    button{
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #a9abaa;
-      margin-right: 5px;
-    }
 
     button.active{
-      background-color: #f36e07;
+      span{
+        background: #f36e07 !important;
+      }
     }
   }
 }

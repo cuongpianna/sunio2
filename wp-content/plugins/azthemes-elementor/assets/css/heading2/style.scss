@@ -1,0 +1,30 @@
+/************* HEADING 2 *****************/
+
+.sunio-heading2{
+  border-left: 3px solid #da6264;
+  padding: 5px 13px;
+  .title{
+    line-height: 1;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #4f5054;
+  }
+
+  .under{
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-top: 15px;
+
+
+    .left{
+      color: #4f5054;
+    }
+
+    .right{
+      color: #da6264;
+    }
+  }
+}
+

@@ -1,0 +1,39 @@
+.sunio-hotline{
+  font-weight: 500;
+  font-size: 19px;
+  display: flex;
+  .left{
+    padding: 4px 37px;
+    background: #df4b4b;
+    position: relative;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+
+    i{
+      margin-right: 12px;
+    }
+
+
+    &:after{
+      padding-left: 4px;
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 24px 0 18px 20px;
+      border-color: transparent transparent transparent #df4b4b;
+      position: absolute;
+      right: -24px;
+      top: 0;
+    }
+  }
+
+  .right{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: #ffffff;
+  }
+}

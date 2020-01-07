@@ -19,12 +19,15 @@ class Modules_Manager {
 		$modules = [
 			'accordion',
 			'heading',
+            'heading2',
 			'principle',
 			'Navigation',
 			'aztsuport',
 			'newsletter',
             'brands',
             'image',
+            'blogslide',
+            'hotline'
 		];
 		if ( is_woocommerce_active() ) {
 			$modules[] = 'woocommerce';

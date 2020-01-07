@@ -10,18 +10,27 @@
       margin-top: 10px;
       a{
         font-weight: 500;
-        font-size: 17px;
+        font-size: 15px;
       }
     }
 
     .price{
       font-weight: 600;
-
-      font-size: 20px;
+      line-height: 1;
+      font-size: 18px;
       margin-top: 10px;
 
       span{
         color: #212121;
+      }
+    }
+
+    .min-order-wrap{
+      margin-top: 3px;
+      .min-order{
+        font-weight: 600;
+          color: #212121;
+          font-size: 15px;
       }
     }
   }
@@ -45,5 +54,11 @@
   flex-wrap: wrap;
   .item{
     flex-basis: 20%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sunio-product-list{
+    display: unset;
   }
 }

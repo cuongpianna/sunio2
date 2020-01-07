@@ -1,0 +1,119 @@
+div.ced ul.products li.product a.add_to_cart_button{white-space:normal!important}.loading-gif>img{left:50%;position:absolute;top:50%;width:4%}.loading-gif{background-color:#000;bottom:0;height:100%;opacity:.8;padding:0;position:fixed;right:0;width:100%;z-index:99999}
+.hide{
+	display: none;
+}
+.display{
+	display: block;
+}
+#wramvp_loader {
+	background-color: rgba(255, 255, 255, 0.6);
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 99999;
+}
+#wramvp_loader img {
+	display: block;
+	left: 0;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	top: 40%;
+}
+#wramvp_img_send_email{
+	padding: 10px;
+	margin: 10px 0px 10px 10px;
+	background-color: black;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+}
+.wramvp_img_email_field{
+	height: 36px;
+	max-width:190px;
+	width: 100%;
+}
+.wramvp_main_wrapper {
+	width: calc(100% - 20px);
+	margin-top: 30px;
+	box-sizing: border-box;
+}
+.wramvp_wrap{
+	float: left;
+	width: 68%;
+	margin-right: 2%;
+}
+/*===========================================
+=            PROMOTIONAL SIDEBAR            =
+===========================================*/
+.wramvp_img_email_image {
+	/*position: relative;*/
+	float: left;
+	width: 30%;
+}
+.button-primary.wramvp_cross_image {
+	border-radius: 50%;
+	height: 20px;
+	width: 20px;
+	padding: 0px;
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	display: block;
+	text-align: center;
+	line-height: 16px;
+	box-shadow: none;
+}
+.wramvp_cross_image {
+	position: absolute;
+	right: -5px;
+	top: -5px;
+}
+.wramvp_cross_image > a {
+	display: block;
+	position: relative;
+}
+.wramvp_main_content {
+	background-color: #ffffff;
+	padding: 10px;
+	width: 300px;
+	box-shadow: 0 3px 9px -4px rgba(0,0,0,0.5);
+	position: relative;
+	margin: 95px auto 0;
+}
+.wramvp_main_content .ced-recom h4 {
+	margin: 0;
+	font-size: 14px;
+}
+.wramvp_img_banner a ,
+.wramvp_main_content__col p a {
+	display: block;
+}
+.wramvp_img_banner a img {
+	width: 100%;
+}
+.wramvp-support::after,
+.wramvp_main_wrapper::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.wramvp-support {
+	padding: 15px 0;
+}
+.wramvp-support span a {
+	display: block;
+}
+.wramvp-support .wramvp-support__left {
+	float: left;
+	width: 30%;
+}
+.wramvp-support .wramvp-support__right {
+	float: left;
+	width: 70%;
+}
+/*=====  End of PROMOTIONAL SIDEBAR  ======*/

@@ -4,36 +4,29 @@
     <list default="true" id="ae4179f4-8f47-46b1-9394-b6d9a027a59b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/navigation/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/navigation/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/brands/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/brands/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/style.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/woo_category/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/woo_category/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/woo_products/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/woo_products/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/woo_single_product/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/css/woo_single_product/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/js/brands.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/js/brands.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/js/woo_single_product.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/assets/js/woo_single_product.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/includes/managers/modules.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/includes/managers/modules.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/includes/plugin.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/includes/plugin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/modules/navigation/widgets/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/modules/navigation/widgets/navigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/modules/woocommerce/module.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/modules/woocommerce/module.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/modules/woocommerce/widgets/woo-category.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/modules/woocommerce/widgets/woo-category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/modules/woocommerce/widgets/woo-products.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/modules/woocommerce/widgets/woo-products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-extra/includes/panel/scripts.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-extra/includes/panel/scripts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/woocommerce/templates/checkout/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/woocommerce/templates/checkout/payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/style.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/woo/woocommerce.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/woo/woocommerce.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/woo/woocommerce.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/assets/css/woo/woocommerce.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/assets/js/third/woo/devs/wooQuantityButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/assets/js/third/woo/devs/wooQuantityButtons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/assets/js/third/woo/sunio.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/assets/js/third/woo/sunio.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/settings/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/inc/customizer/settings/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/inc/woocommerce/woocommerce-config.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/inc/woocommerce/woocommerce-config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/partials/mobile/mobile-icon.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/partials/mobile/mobile-icon.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/partials/mobile/mobile-nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/partials/mobile/mobile-nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/partials/topbar/content.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/partials/topbar/content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/sass/components/topbar/_topbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/sass/components/topbar/_topbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/sass/woo/_woo-sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/sass/woo/_woo-sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/woocommerce/checkout/form-checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/woocommerce/checkout/form-checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/woocommerce/sunio/single-review.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/woocommerce/sunio/single-review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/woocommerce/sunio/woo-sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/woocommerce/sunio/woo-sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/modules/woocommerce/widgets/woo-single-product.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/azthemes-elementor/modules/woocommerce/widgets/woo-single-product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/partials/entry/media/blog-entry-gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/partials/entry/media/blog-entry-gallery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/partials/single/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/partials/single/layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/partials/single/media/blog-single-audio.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/partials/single/media/blog-single-audio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/partials/single/media/blog-single.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/partials/single/media/blog-single.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/partials/single/related-posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/partials/single/related-posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sunio/sass/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sunio/sass/_layout.scss" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,15 +69,15 @@
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -134,18 +127,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1577319015442" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1577274992498">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1578353744213">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577274992498" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578353744213" />
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1577271085504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577271085504" />
-    <state x="656" y="257" width="990" height="526" key="find.popup" timestamp="1577319154312">
+    <state x="656" y="257" width="990" height="526" key="find.popup" timestamp="1578357552327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="257" width="990" height="526" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577319154312" />
+    <state x="656" y="257" width="990" height="526" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578357552327" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1576981855556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

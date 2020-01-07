@@ -116,6 +116,7 @@ class Woo_Category extends Widget_Base
         <div class="woo-cateogires">
             <?php foreach ($all_categories as $cat): $category_id = $cat->term_id;
                 $thumbnail_id = get_term_meta($cat->term_id, 'thumbnail_id', true);
+                $link = get_term_link( (int)$category_id, 'product_cat' );
                 $image_url = wp_get_attachment_url($thumbnail_id);
                 if (!$image_url) {
                     $image_url = wc_placeholder_img_src();
@@ -126,9 +127,9 @@ class Woo_Category extends Widget_Base
                     <div class="image">
                         <img src="<?php echo $image_url; ?>" alt="">
                     </div>
-                    <h3><?php echo $cat->name; ?></h3>
+                    <h3><a href="<?php echo esc_url($link);?>"><?php echo $cat->name; ?></a></h3>
                     <div class="desc">
-                        <?php echo $cat->description; ?>
+                        <?php echo $cat->description;?>
                     </div>
 
                 </div>

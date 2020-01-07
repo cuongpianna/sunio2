@@ -76,4 +76,59 @@
       }
     }
   }
+
+  .owl-nav{
+    button{
+      position: absolute;
+      top: 50%;
+      margin: 0 !important;
+
+      &:hover{
+        background: none !important;
+
+        i{
+          color: #de4a4a !important;
+        }
+      }
+
+      i{
+        font-size: 25px;
+      }
+    }
+
+    .owl-prev{
+      left: 70px;
+    }
+
+    .owl-next{
+      right: 70px;
+    }
+  }
+
+  .product-thumnails{
+    .owl-dots{
+      button{
+        span{
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      button.active{
+        span{
+          background: #fd7306 !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sunio-single-product .item.sunio-item{
+    padding: 30px 10px;
+  }
+
+  .avatar-wrap{
+    display: none;
+  }
 }

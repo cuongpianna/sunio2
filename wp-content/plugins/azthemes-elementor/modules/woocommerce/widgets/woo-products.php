@@ -340,7 +340,10 @@ class Woo_Products extends Widget_Base
         <div class="sunio-product-list columns-<?php echo  esc_attr($settings['columns']); ?>">
             <?php if ($products->have_posts()): while ($products->have_posts()): $products->the_post(); global $product;?>
             <?php
-                $img = wp_get_attachment_image_src( get_post_thumbnail_id( $product->ID ), 'single-post-thumbnail')[0];
+                $min_order = get_post_meta($product->get_id(), 'min_order', true);
+                $p_unit = get_post_meta($product->get_id(), 'product_unit', true);
+
+                $img = wp_get_attachment_image_src( get_post_thumbnail_id( $product->get_id() ), 'single-post-thumbnail')[0];
                 if(!$img){
                     $img = wc_placeholder_img_src();
                 }
@@ -353,11 +356,20 @@ class Woo_Products extends Widget_Base
                         <img src="<?php echo $img; ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
                     </div>
                     <h3 class="title">
-                        <a href="<?php echo get_permalink(); ?>"><?php echo esc_html(get_the_title()); ?></a>
+                        <a href="<?php echo get_permalink(); ?>"><?php echo wp_trim_words(get_the_title(), 4); ?></a>
                     </h3>
                     <div class="price">
                         <?php echo $product->get_price_html(); ?>
                     </div>
+
+                    <?php if($min_order): ?>
+                        <div class="min-order-wrap">
+                                        <span class="min-order">
+                                            <?php echo $min_order . ' ' . $p_unit; ?>
+                                        </span>
+                            <span class="unit">(Min. Order)</span>
+                        </div>
+                    <?php endif; ?>
                 </div>
 
             <?php endwhile;

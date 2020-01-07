@@ -174,7 +174,7 @@ class AztElementorPlugin {
 			true
 		);
 
-        wp_register_script( 'azt-brand',
+        wp_register_script( 'azt-brands',
             plugins_url( '/assets/js/brands' . $suffix . '.js', sunio_Elementor_Extra__FILE__ ),
             [ 'jquery' ],
             false,
@@ -183,6 +183,13 @@ class AztElementorPlugin {
 
         wp_register_script( 'azt-woo_single_product',
             plugins_url( '/assets/js/woo_single_product' . $suffix . '.js', sunio_Elementor_Extra__FILE__ ),
+            [ 'jquery' ],
+            false,
+            true
+        );
+
+        wp_register_script( 'azt-blogslide',
+            plugins_url( '/assets/js/blogslide' . $suffix . '.js', sunio_Elementor_Extra__FILE__ ),
             [ 'jquery' ],
             false,
             true
